@@ -1,0 +1,43 @@
+<view class="">
+  <view class="first-category">
+    <button plain class="ft24" catchtap='toSearch'>关键字搜索</button>
+  </view>
+  <view class="first-category">
+    <scroll-view scroll-x style=" white-space: nowrap; display: flex">
+      <view class="first-category-item {{currentId == item.category_id ? 'cl-wt' : ''}}" data-id="{{item.category_id}}" wx:for="{{categories}}" wx:key="{{item.category_id}}" data-index="{{index}}" bindtap="chooseFirstCategory">
+        <text class="bold">{{item.category_name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="clearfix" style="position:absolute;top:160rpx;left:0;right:0;bottom:0">
+    <view class="bar fl" >
+      <scroll-view scroll-y="{{scrollY}}">
+        <view class="category-item {{subCurrentId == subCategory.category_id ? 'bg-wt' : ''}}" data-id="{{subCategory.category_id}}" wx:for-item="subCategory" wx:for-index="sindex" wx:for="{{subCategories}}" data-index="{{sindex}}" bindtap="chooseSecondCategory">
+          <text class="bold">{{subCategory.category_name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="content fl">
+      <view class="third-category clearfix" wx:if="{{subSubCategories.length > 0}}" style="min-height:120rpx;">
+        <view class="t-c-item fl {{subSubCurrentId == subSubCategory.category_id ? 'bg-wt' : ''}}" wx:for="{{subSubCategories}}" wx:key="{{ssindex}}" wx:for-index="ssindex" wx:for-item="subSubCategory" data-id="{{subSubCategory.category_id}}" data-index="{{ssindex}}" bindtap="chooseThirdCategory">
+          <text>{{subSubCategory.category_name}}</text>
+        </view>
+      </view>
+      <view style="padding:20rpx;text-align:center" wx:if="{{goods.length == 0 && !goodsLoading}}">
+        <image src="/images/no_goods.png" style="width:240rpx;height:120rpx"></image>
+      </view>
+      <view style="padding:8rpx;overflow-y:scroll;position:absolute;left:0rpx;right:0;top:{{subSubCategories.length > 0 ? '155rpx' : 0}};bottom:0" class="clearfix">
+        <scroll-view style="height:100%;" scroll-y>
+          <view class="sub-category fl" wx:for="{{goods}}" wx:key="{{item.goods_id}}" data-id="{{item.goods_id}}" bindtap="toDetail">
+            <image src="{{item.thumbnail}}" class="fl"></image>
+            <view class="fl">
+              <text class="over-elips good-name" style="text-align:left">{{item.goods_name}}</text>
+              <text class="price" style="text-align:left" wx:if="{{item.min_money == item.max_money}}">¥ {{item.price}}</text>
+              <text class="price" style="text-align:left" wx:else>¥ {{item.min_money}} ~ ¥ {{item.max_money}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,155 @@
+<!-- <include src="/pages/template/bindphone.wxml" /> -->
+<view class='index-cont'>
+
+  <!-- 用户资料 -->
+
+  <view class="user-info tc bg-wt">
+    <view class="headimg">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="bold user-name">
+      <text class="over-elips" style="width:500rpx;">{{userInfo.nickName}}</text>
+    </view>
+    <view class="manager-switch" wx:if="{{isManager}}">
+      <button plain size="mini" wx:if="{{roleType == 1}}" catchtap='switchManager'>切换项目经理</button>
+      <button style="background:#f0d307;" plain size="mini" wx:if="{{roleType == 2}}" catchtap='switchClient'>切换普通客户</button>
+    </view>
+  </view>
+
+  <!-- 用户账户 -->
+  <view class='index-nav' wx:if="{{roleType == 1}}">
+    <view class="acct-info tc">
+      <view class="acct-info-item">
+        <view class="bold ft34">{{accountInfo.intergral}}</view>
+        <view class="ft24 txt-gray">积分</view>
+      </view>
+      <view class="acct-info-item">
+        <view class="bold ft34">{{accountInfo.coupons}}</view>
+        <view class="ft24 txt-gray">优惠券</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='h20 bg-gray'></view>
+  <view class='index-nav'>
+    <navigator url='/pages/order/list/list?index=0'>
+      <view class="clearfix ft28 all-order" style="padding:24rpx 0;border-bottom:1rpx solid #f3f5f7;">
+        <text class="fl bold">全部订单</text> 
+        <image src="/images/arrow.png" class="fr"></image>
+        <text class="fr txt-gray">查看全部订单</text>
+      </view>
+    </navigator>
+  </view>
+  <view class='index-nav-1'>
+    <navigator url='/pages/order/list/list?index=1'>
+      <view style="position:relative">
+        <image src="/images/wait_pay.png" style="width:57rpx;height:43rpx;"></image>
+        <view>
+          <text>待付款</text>
+        </view>
+        <text class="order-num" wx:if="{{orderNum.nopayNum}}">{{orderNum.deliver_num}}</text>
+      </view>
+    </navigator>
+    <navigator url='/pages/order/list/list?index=2'>
+      <view style="position:relative">
+        <image src="/images/wait_deliver.png" style="width:53rpx;height:43rpx;"></image>
+        <view>
+          <text>待发货</text>
+        </view>
+        <text class="order-num" wx:if="{{orderNum.deliver_num}}">{{orderNum.deliver_num}}</text>
+      </view>
+    </navigator>
+    <navigator url='/pages/order/list/list?index=3'>
+      <view style="position:relative">
+        <image src="/images/wait_recive.png" style="width:56rpx;height:43rpx;"></image>
+        <view>
+          <text>待收货</text>
+        </view>
+        <text class="order-num" wx:if="{{orderNum.receive_num}}">{{orderNum.receive_num}}</text>
+      </view>
+    </navigator>
+    <navigator url='/pages/order/list/list?index=4'>
+      <view>
+        <image src="/images/receive.png" style="width:48rpx;height:43rpx;"></image>
+        <view>
+          <text>已完成</text>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='/pages/order/list/list?index=5'>
+      <view>
+        <image src="/images/after-sale.png" style="width:43rpx;height:43rpx;"></image>
+        <view>
+          <text>售后</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class='h20 bg-gray'></view>
+
+  <!-- 导航 nav -->
+  <view class="user-nav">
+    <view class="nav-item clearfix" bindtap="integrayMall">
+      <view class="img fl tc">
+        <image class="fl icon va-mid" src="/images/jifenmall.png" style="width:42rpx;height:39rpx;"></image>
+      </view>
+      <text class="fl ft28">积分商城</text>
+      <image src="/images/arrow.png" class="fr"></image>
+    </view>
+    <view class="nav-item clearfix" bindtap="coupon">
+      <view class="img fl tc">
+        <image class="fl icon va-mid" src="/images/coupon.png" style="width:40rpx;height:40rpx;"></image>
+      </view>
+      <text class="fl ft28">我的优惠券</text>
+      <image src="/images/arrow.png" class="fr"></image>
+    </view>
+  </view>
+
+  <view class='h20 bg-gray'></view>
+
+  <view class="user-nav">
+    <view class="nav-item clearfix" bindtap="shareCode">
+      <view class="img fl tc">
+        <image class="fl icon va-mid" src="/images/qrcode.png" style="width:36rpx;height:36rpx;"></image>
+      </view>
+      <text class="fl va-mid  ft28">分享二维码</text>
+      <image src="/images/arrow.png" class="fr"></image>
+    </view>
+    <view class="nav-item clearfix" bindtap="toAddress">
+      <view class="img fl tc">
+        <image class="fl icon va-mid" src="/images/address.png" style="width:34rpx;height:40rpx;"></image>
+      </view>
+      <text class="fl ft28">收货地址</text>
+      <image src="/images/arrow.png" class="fr"></image>
+    </view>
+  </view>
+  <view class='h20 bg-gray'></view>
+
+  <view class="user-nav">
+    <view class="nav-item clearfix" bindtap="toAboutUs" >
+      <view class="img fl tl">
+        <image class="icon va-mid" src="/images/about-us.png" style="width:42rpx;height:42rpx;"></image>
+      </view>
+      <text class="fl ft28">关于我们</text>
+      <image src="/images/arrow.png" class="fr"></image>
+    </view>
+    <view class="nav-item clearfix" bindtap="toAfterSale">
+      <view class="img fl tl">
+        <image class="icon va-mid" src="/images/shouhou.png" style="width:36rpx;height:39rpx;"></image>
+      </view>
+      <text class="fl ft28">售后服务</text>
+      <image src="/images/arrow.png" class="fr"></image>
+    </view>
+    <view class="nav-item clearfix" bindtap="makePhoneCall">
+      <view class="img fl tl">
+        <image class="fl icon va-mid" src="/images/client_phone.png" style="width:40rpx;height:40rpx;"></image>
+      </view>
+      <text class="fl ft28">客服电话</text>
+      <image src="/images/arrow.png" class="fr" ></image>
+    </view>
+  </view>
+  <view class='h60 bg-gray'></view>
+
+</view>

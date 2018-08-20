@@ -1,0 +1,32 @@
+<view class="wrap">
+  <view class="integral-wrap">
+    <text class="ft34 va-mid">当前积分：</text>
+    <text class="ft42 txt-rd bold va-mid ">{{accountInfo.intergral}}</text>
+  </view>
+  <view class="coupon-wrap">
+    <scroll-view scroll-y style="position:fixed;left:0;right:0;bottom:0;top:120rpx">
+      <block wx:for="{{couponItem}}" wx:for-index="idx" wx:key="{{idx}}">
+        <view>
+          <view class="coupon-list" catchtap='exchangeTap' data-idx="{{idx}}">
+            <image class='coupon-bg' src='{{item.coupon_image ? item.coupon_image : "/images/coupon-bg-1.png"}}' />
+            <view class='coupon-cont' wx:if="{{!item.coupon_image}}">
+              <view class='coupon-l'>
+                <view class='postage' wx:if="{{item.deduction_type == 1}}">{{item.percentage / 10}}折</view>
+                <view class='postage' wx:if="{{item.deduction_type == 2}}">{{item.money}}元</view>
+              </view>
+              <!-- <view class='coupon-r'>
+                <view class='name'>{{item.coupon_name}}</view>
+                <view class='type'>编号：{{item.coupon_code}}</view>
+                <view class='dueTime'>
+                  <image src='/images/dueTime.png' />有效期：
+                  <text decode='true'>{{item.start_time ? (item.start_time + '&nbsp; 至&nbsp;') : ''}}</text>
+                  <text>{{item.end_time ? item.end_time : '长期有效'}}</text>
+                </view>
+              </view> -->
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

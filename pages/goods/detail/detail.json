@@ -1,0 +1,7 @@
+{
+  "backgroundColor": "#f0f3f3",
+  "usingComponents": {
+    "wave": "/components/loading/loading1/wave",
+    "goods-standard": "/components/goodsStandard/goodsStandard"
+  }
+}

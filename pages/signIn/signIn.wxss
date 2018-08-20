@@ -1,0 +1,134 @@
+page{background: #fff;}
+.calendar-root{
+    background: #fff;margin: 24rpx 30rpx 0;
+    /* height:100%; */
+    border: 2rpx solid #88dc88;
+    border-radius: 6rpx;
+}
+
+.calendar-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #edf9ee;
+    height: 94rpx;line-height: 94rpx;
+}
+.calendar-navbar view{
+  
+}
+.calendar-navbar-button{
+    flex-grow: 1;
+    width: 100rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+.calendar-navbar-date{
+    flex-grow: 1;
+    width: 160rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #48b553;
+}
+
+.calendar-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+    background: #fff;
+    font-size: 35rpx;
+}
+.calendar-head view{
+    text-align: center;font-size: 24rpx;color: #999;
+    flex:1;
+}
+.calendar-head view:first-child{color:#000;}
+.calendar-head view:last-child{color:#000; }
+.calendar-body{
+    background: #fff;
+}
+.calendar-body-rows{
+    display: flex;
+    align-items: center;
+    /* height: 98rpx; */
+    padding:12rpx 4rpx;
+}
+.calendar-body-cols{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 100%;
+    padding: 0 4rpx;
+}
+.calendar-body-item{
+    position: relative;
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+.signIn-icon{width:23rpx;height:23rpx;position: absolute;top: 0;right: 0;}
+.today-icon{position: absolute;bottom:-18rpx;left:50%;margin-left: -6rpx;  background: #f00;width: 12rpx;height: 12rpx;border-radius: 6rpx;}
+.black{background: #42adff;}
+.calendar-body-day{
+    text-align: center;
+    color:#333;font-size:32rpx;
+     font-weight: bold;  
+}
+.calendar-body-dayex{
+    text-align: center;
+    font-size: 20rpx;
+    color: #888888;
+}
+
+.calendar-detail{
+    background: #fff;
+    margin-bottom:40rpx
+}
+.calendar-detail-day{
+    display:inline;
+    position: absolute;
+    margin-left: 160rpx;
+    font-size: 72rpx;
+    font-weight: bold;
+    color: red;
+}
+.calendar-detail-info1{
+    margin-left: 290rpx;
+     padding-top: 10rpx; 
+     padding-bottom: 10rpx; 
+    font-size:24rpx;
+    font-weight: bold;
+}
+.calendar-detail-info2{
+    margin-left: 290rpx;
+    /* padding-top: 10rpx; */
+    /* padding-bottom: 10rpx; */
+    font-size: 22rpx;
+}
+
+.signIn-success{margin-top: 74rpx;text-align: center;line-height: 44rpx;font-size: 28rpx;color: #000;}
+.signIn-success text{color: #42b54d;}
+.signIn-reminder{display: flex;margin: 30rpx;justify-content: space-between;align-items:center;
+position: relative;}
+.signIn-reminder .reminder-l{width: 490rpx;min-height:80rpx; 
+background: #f9f9f9;text-align:center;font-size:30rpx;padding: 20rpx 40rpx;box-sizing: border-box;}
+
+.signIn-btn{display:flex;padding:0;font-size:28rpx;min-height:80rpx;
+background-color:#63c966;color:#fff;width:200rpx;border-radius:0rpx;
+position: absolute;right: 0;top: 0;bottom: 0;justify-content: center;
+align-items: center;}
+
+.btn-hover{background: #ddd;}
+
+.signIn-btn::after{border: none;}
+.finish{background:none;color: #63c966; border: 1px solid #63c966;position: absolute;right: 0;top: 0;bottom: 0;}
+.signIn-rule{margin:60rpx 32rpx;}
+.rule-tit{position: relative;display: flex;align-items: center;margin-bottom: 45rpx;}
+.rule-tit view{position: absolute;width: 100%; height: 1px;background:#e8e8e8;left: 0;top:50%;z-index: 1;}
+.rule-tit text{background: #fff;padding: 0 25rpx;margin: 0 auto;font-size: 28rpx;color: #333;z-index: 2;}
+.rule-item{font-size: 24rpx;color: #999;line-height: 48rpx;display: flex;}

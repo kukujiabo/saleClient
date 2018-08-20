@@ -1,0 +1,17 @@
+<view class="cover-wapper {{fadeOut}}" hidden="{{!showDialog}}" onanimationend="fadeOutEnd">
+  <view class="cover cover-white"></view>
+  <view class="dialog-wrapper {{dialogStyle}}">
+    <view class="dialog-box">
+      <view class="dialog-header">
+        <text>{{title}}</text>
+      </view>
+      <view class="dialog-content">
+        <view class="dialog-text">{{content}}</view>
+      </view>
+      <view class="dialog-footer">
+        <view bindtouchstart='cancelTap' hidden="{{!showCancel}}" hover-class="cancel-tap" class="btn cancel {{cancelLength}}">取消</view>
+        <view bindtouchstart='confirmTap' hidden="{{!showConfirm}}" hover-class="confirm-tap" class="btn confirm {{confirmLength}}" size="mini">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

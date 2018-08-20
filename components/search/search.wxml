@@ -1,0 +1,11 @@
+<view class="search-wrapper tl" style="top:{{topPosition}}rpx">
+  <view class="out-wrapper">
+    <view class="va-mid ft24 city-wrapper tc bold txt-dark over-elips" catchtap='selectCity'>
+      {{location.city}}
+    </view>
+    <view class="input-wrapper">
+      <image src="/images/scope.png" class="va-mid"></image>
+      <input type="text" placeholder-style='font-size:18rpx;' placeholder='请输入关键字' class="va-mid" bindconfirm='confirmInput'></input>
+    </view>
+  </view>
+</view>

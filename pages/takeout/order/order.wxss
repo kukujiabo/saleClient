@@ -1,0 +1,100 @@
+page {
+  background: #fff;
+}
+
+.swiper-tab {
+  background: #fff;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+  line-height: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.swiper-tab-list {
+  font-size: 28rpx;
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  color: #333;
+}
+
+.on {
+  color: #116fea;
+  border-bottom: 5rpx solid #116fea;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+}
+
+.swiper-cont {
+  background: #fff;
+  padding-top: 80rpx;
+}
+
+.orderItem {
+  display: flex;
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #f1f1f1;
+  height: 140rpx;
+}
+
+.orderItem .img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.w590 {
+  width: 590rpx;
+}
+
+.w570 {
+  width: 570rpx;
+}
+
+.orderItem .name {
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.orderItem .state {
+  font-size: 26rpx;
+  color: #da7c0c;
+}
+
+.orderItem .time {
+  padding: 10rpx 0 10rpx 0;
+}
+
+.orderItem .time, .orderItem .total {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.orderItem button {
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0;
+  font-size: 22rpx;
+  margin-left: 20rpx;
+  border-radius: 3px;
+  color: #6bf;
+  border: 1px solid #6bf;
+  background: #fff;
+}

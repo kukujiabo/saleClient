@@ -1,0 +1,56 @@
+<view class="addreaa-cont">
+    <dialog id="dialog"></dialog>
+    <search id="search_text" searchType="2" bindconfirm="confirmInput" bindsearchalladdress="searchAllEvent"></search>
+    <view style="height:120rpx;background:#fff"></view>
+    <scroll-view scroll-y style="position:fixed;top:120rpx;bottom:0;left:0;right:0">
+      <block wx:for="{{addrList}}" wx:for-index="index">
+          <view class='addr-list' id='{{item.address_id}}'>
+              <view class='addr' data-idx="{{index}}" id='{{item.address_id}}' data-code='{{item.city}}' bindtap='callbackTap'>
+                  <view class='icon'>
+                      <image src='/images/addr.png' />
+                  </view>
+                  <view class='addr-txt'>
+                      <view class='addr-txt-top'>
+                          <view class='recipients'>
+                              <text>收件人：</text> {{item.consigner}}
+                          </view>
+                          <view class='tele'> {{item.mobile}}</view>
+                      </view>
+                      <view class='recipients-addr  over-elips' style='margin:12rpx 0'>
+                          <text>省市区：</text> {{item.province_name}} {{item.city_name}} {{item.area_name}}
+                      </view>
+                      <view class='recipients-addr over-elips'>
+                          <text>详细地址：</text> {{item.address}}
+                      </view>
+                  </view>
+              </view>
+              <view class='addr-manage'>
+                  <view class='radio'>
+                      <radio-group class="radio-group">
+                          <label class="radio" bindtap='radioCheck' data-idx="{{index}}" id='{{item.address_id}}'>
+                              <radio value="" checked="{{item.default}}" />设为默认
+                          </label>
+                      </radio-group>
+                  </view>
+                  <view class='addr-btn'>
+                      <view class='addr-edit' data-idx="{{index}}" id='{{item.address_id}}' catchtap='addrEditTap' data-addressid="{{item.address_id}}">
+                          <image src='/images/edit.png' style='width:34rpx;height:41rpx;' /> 编辑
+                      </view>
+                      <view class='addr-delete' data-idx="{{index}}" bindtap='addrDeleTap' data-addressid="{{item.address_id}}">
+                          <image src='/images/delete.png' style='width:37rpx;height:37rpx;' /> 删除
+                      </view>
+                  </view>
+              </view>
+              <view class='h20'></view>
+          </view>
+      </block>
+      <view style="height:180rpx;"></view>
+    </scroll-view>
+    <view wx:if="{{addrNo}}" class='addrNo pt400'>
+         <image src='/images/addrNo.png' style='width:160rpx;height:160rpx;'></image>
+         <text> 您还没有收货地址哦</text> 
+    </view>
+</view>
+<view class='addAddr-btn'>
+    <button class='btn' hover-class="btn-hover" catchtap='addAddrTap'>添加新地址</button>
+</view>

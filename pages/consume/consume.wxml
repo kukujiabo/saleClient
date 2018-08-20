@@ -1,0 +1,25 @@
+<view class="consume-cont">
+  <block wx:for="{{consumeItem}}" wx:for-index="idx">
+    <view class='consume-list' bindtap='detailTap' data-idx="{{idx}}">
+      <view class='consumeTxt'>
+        <view class='consume-list-t'>
+          <view>{{item.subject}}</view>
+          <text>¥{{item.total}}</text>
+        </view>
+        <view class='consume-list-b'>
+          <text class='time'>{{item.do_time}}</text>
+          <view class='way' wx:if="{{item.online == 'true'}}">
+            <image src='/images/consume1.png' />
+          </view>
+          <view class='way' wx:else>
+            <image src='/images/consume2.png' />
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class='norecord pt400' wx:if="{{norecord}}">
+    <image src='/images/norecord-2.png' style='width:128rpx;height:128rpx;'></image>
+    <text>暂无消费记录</text>
+  </view>
+</view>

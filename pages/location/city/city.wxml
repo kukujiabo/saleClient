@@ -1,0 +1,20 @@
+<view>
+  <view class="search-bar">
+    <input confirm-type='search' placeholder='请输入城市名称搜索' bindinput='queryInput' bindconfirm='queryCity'></input>
+  </view>
+  <view class="city-wrapper">
+    <view class="city-list clearfix">
+      当前城市：<text class="active">{{currentCity.city}}</text>
+    </view>
+    <view class="city-list clearfix">
+      <view class="char-key">热门城市：</view>
+      <text class="{{item.selected ? 'active' : ''}}" wx:for="{{hots}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='selectHot' data-idx="{{index}}">{{item.short}}</text>
+    </view>
+    <view class="clearfix" wx:for="{{arrange}}" wx:for-index="cindex" wx:for-item="cityItems" wx:key="{{cindex}}">
+      <text class="char-key">{{cindex}}</text>
+      <view class="city-list clearfix">
+        <text class="{{item.selected ? 'active' : ''}}" wx:for="{{cityItems}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='selectCity' data-idx="{{index}}" data-char="{{cindex}}">{{item.short}}</text>
+      </view>
+    </view>
+  </view>
+</view>

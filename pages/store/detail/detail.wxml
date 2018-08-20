@@ -1,0 +1,19 @@
+<view class="map-cont">
+    <view class='shop-img'>
+        <image src='{{storeDetail.pic_address}}' mode="widthFix" style="width:100%;height:auto;" />
+    </view>
+    <view class='info'>
+        <view>
+            <text class='storeName'>{{storeDetail.store_name}}</text>
+        </view>
+        <view catchtap='openMap'>
+            <text>{{storeDetail.address}}</text>
+            <image src='/images/location.png' />
+        </view>
+        <view catchtap='makePhoneCall'>
+            <text>{{storeDetail.phone}}</text>
+            <image src='/images/tele.png' />
+        </view>
+    </view>
+</view>
+<view class='takeoutNav' bindtap='takeoutTap' wx:if="{{storeDetail.is_outside_order == 1}}">点外卖</view>

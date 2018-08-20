@@ -1,0 +1,139 @@
+@import '/app.wxss';
+
+page {
+  background: #fff;
+  position: relative;
+  background: #f3f3f3;
+}
+
+.add-addr {
+  margin: 16rpx 24rpx;
+  padding: 36rpx 0 48rpx 0;
+  background: #fff;
+  box-shadow: 0 0 20rpx #ddd;
+  border-radius: 5rpx;
+}
+
+.add-addr-list {
+  margin: 0rpx 30rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.add-addr-list radio {
+  transform: scale(0.7);
+  margin-left: 25rpx;
+}
+
+.add-addr-list text {
+  width: 140rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.add-addr-list input {
+  font-size: 28rpx;
+  color: #333;
+  width: 520rpx;
+}
+
+.addr-picker {
+  width: 100%;
+}
+
+.addr-picker text {
+  display: inline-flex;
+}
+
+.addr-picker input {
+  display: inline-flex;
+}
+
+.ml110 {
+  margin-left: 110rpx;
+}
+
+.member-cont {
+}
+
+.add-addr-list .phone {
+}
+
+.w620 {
+  margin-left: 30rpx;
+}
+
+.add-addr-list .phoneTap {
+  color: #63c966;
+  margin: 0;
+  border: none;
+  background: none;
+  font-size: 28rpx;
+}
+
+.add-addr-list .phoneTap::after {
+  border: none;
+}
+
+.member-cont .add-addr-list {
+  border-bottom: none;
+}
+
+.pickerdate {
+  display: flex;
+  height: 100rpx;
+  position: relative;
+}
+
+.pickerdate input {
+  display: inline-flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  min-height: 100rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 28rpx;
+}
+
+/**获取微信头像和名字**/
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin: 30rpx 24rpx 24rpx 24rpx;
+  box-shadow: 0 0 20rpx #ddd;
+  borde-radius: 5rpx;
+}
+
+.userinfo view {
+  flex: 1;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.userinfo-nickname {
+  color: #666;
+  font-size: 34rpx;
+  font-weight: 400;
+  padding-right: 18rpx;
+  width: 300rpx;
+}
+
+.reminder {
+  padding-left: 100rpx;
+  font-size: 20rpx;
+  color: #ff2d2d;
+}

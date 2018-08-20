@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "收货地址管理",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#f0f3f7",
+    "disableScroll": true,
+    "usingComponents": {
+      "dialog": "/components/dialog/lightDialog/light-dialog",
+      "search": "/components/search/search"
+    }
+}

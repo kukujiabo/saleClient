@@ -1,0 +1,8 @@
+<view>
+  <view class="w-list">
+    <view class="w-itm clearfix" wx:for="{{workspaces}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-price="{{item.rest_credit}}" data-name="{{item.name}}" bindtap="chooseItem">
+      <text class="fl">{{item.name}}</text>
+      <text class="fr">剩余额度：¥ {{item.rest_credit}}</text>
+    </view>
+  </view>
+</view>

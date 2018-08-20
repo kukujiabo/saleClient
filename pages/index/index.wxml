@@ -1,0 +1,299 @@
+<view>
+
+  <!-- 轮播图 -->
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:480rpx">
+    <block wx:for="{{brandList}}" wx:key="{{idx}}">
+      <swiper-item catchtap='toDetail'>
+        <image class="brand-image" src="{{item.url}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 搜索框 -->
+
+  <view>
+
+    <search id="search" searchType="1"></search>
+
+  </view>
+
+  <!-- 标签切换 -->
+
+  <view class="tabs clearfix">
+    <view class="tab {{item.active ? 'active' : ''}}" wx:for="{{tabs}}" wx:key="{{index}}" data-idx="{{index}}" catchtap='switchTab'>{{item.tab_name}}</view>
+  </view>
+  <view class="blur-bottom">
+
+  </view>
+
+  <!-- 标签页 -->
+
+  <swiper style="position:fixed;bottom:0;top:420rpx;left:0;right:0;height:auto" duration="{{tabDuration}}" bindchange="changeTab" current="{{currentTab}}">
+
+    <!-- 标签页-首页 -->
+
+    <block>
+      <swiper-item>
+        <scroll-view scroll-y class="index-scroll" bindscroll="scrollLsn" scroll-into-view="{{toScrollView}}">
+
+          <view class="scroll-wrapper" id="top_view">
+
+            <!-- 分类 -->
+
+            <view class="grids">
+              <view class="grid tc" wx:for="{{categories}}" wx:key="{{index}}" data-id="{{item.category_id}}" catchtap="toClassify">
+                <view>
+                  <image src="{{item.category_pic}}"></image>
+                </view>
+                <view>
+                  <text>{{item.category_name}}</text>
+                </view>
+              </view>
+            </view>
+
+            <!-- 爆款 -->
+
+            <view class="section-title">
+              <image class="va-mid" src="/images/hot.png"></image>
+              <text class="va-mid">爆款商品</text>
+            </view>
+            <scroll-view scroll-x class="horizontal-scroll">
+              <view style="min-width:1300rpx;width:{{hotLength}}rpx">
+                <view class="hot-good tl" wx:for="{{hotGoods}}" wx:key="{{index}}" data-id="{{item.goods_id}}" catchtap='toGoodDetail'>
+                  <view class="image">
+                    <image src="{{item.thumbnail}}"></image>
+                  </view>
+                  <view class="goods-name over-elips" style="width:150rpx">{{item.goods_name}}</view>
+                  <view class="price txt-rd">¥ {{item.price}}</view>
+                </view>
+              </view>
+            </scroll-view>
+
+            <!-- 新品 -->
+
+            <view class="ad-zoom">
+              <image src="{{ad.img_path}}"></image>
+            </view>
+
+            <!-- 奖励 -->
+
+            <view class="ad-zoom" catchtap='getNewBoun' wx:if="{{!newBounFeched}}">
+              <image src="{{reward.img_path}}"></image>
+            </view>
+
+            <!-- 产品展示 -->
+
+            <view class="section-title">
+              <image class="va-mid" src="/images/hot.png"></image>
+              <text class="va-mid">产品展示</text>
+            </view>
+            <view class="goods-display">
+              <view class="goods" wx:for="{{displayGoods}}" wx:key="{{index}}" data-id="{{item.goods_id}}" catchtap='toGoodDetail'>
+                <view>
+                  <!--
+                  <image src="{{item.picture}}"></image>
+                -->
+                  <view class="image" style="background-image:url({{item.picture}});background-size: 100% auto;background-position:center center;"></view>
+                </view>
+                <view>
+                  <text class="ft28 over-elips" style="width:300rpx;display:inline-block">{{item.goods_name}}</text>
+                </view>
+                <view>
+                  <text class="ft24 txt-dark">{{item.brand_name}}</text>
+                </view>
+                <view class="clearfix">
+                  <text class="ft24 txt-rd">¥ {{item.min_money}}</text>
+                </view>
+              </view>
+            </view>
+
+
+            <!-- 合作伙伴 -->
+
+            <view class="section-title">
+              <image class="va-mid" src="/images/hot.png"></image>
+              <text class="va-mid">合作伙伴</text>
+            </view>
+            <view class="partner-display">
+              <view class="partner-wrapper clearfix">
+                <view class="partner-item fl" wx:for="{{partners}}" wx:key="{{index}}">
+                  <image src="{{item.brand_avatar}}"></image>
+                </view>
+              </view>
+            </view>
+
+          </view>
+
+          <view class="tc tab-bottom">
+            <text>—————— 到底啦！——————</text>
+          </view>
+
+        </scroll-view>
+      </swiper-item>
+    </block>
+
+    <!-- 促销活动 -->
+
+    <block>
+      <swiper-item>
+        <scroll-view scroll-y class="index-scroll">
+          <view class="promotions">
+            <view class="promotion-item {{( index % 2 == 1 && index != 0) ? 'promotion-right' : 'promotion-left' }}" wx:for="{{promotionGoods}}" wx:key="{{index}}">
+              <view class="pro-signature tc ft24">直降{{item.cut_money}}元</view>
+              <view style="height:16rpx"></view>
+              <view>
+                <image src="{{item.banner}}"></image>
+              </view>
+              <view class="info">
+                <text class="bold ft34">{{item.goods_name}}</text>
+              </view>
+              <view class="info">
+                <text class="txt-light ft28 line-through">原价：¥ {{item.origin_price}}</text>
+              </view>
+              <view class="info clearfix">
+                <view class="fl">
+                  <text class="txt-rd ft28">¥ </text>
+                  <text class="txt-rd ft42">{{item.price}}</text>
+                </view>
+                <view class="fr">
+                  <button plain size='mini' class="st-btn bold">选规格</button>
+                </view>
+              </view>
+              <view style="height:16rpx"></view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+
+    <!-- 限时抢购 -->
+
+    <!--
+
+    <block>
+      <swiper-item>
+        <scroll-view scroll-y class="index-scroll">
+          <view class="limit-rush">
+            <view class="board">      
+              <view class="time-line">
+                <view class="tc bold ft28 {{item.active ? 'active' : ''}}" data-idx="{{index}}" catchtap='switchTime' wx:for="{{timeItem}}" wx:key="{{index}}">
+                  {{item.time}}
+                </view>
+              </view>
+              <view class="time-count">
+
+              </view>
+            </view>
+            <view style="height:28rpx">
+
+            </view>
+            <view class="rush-list">
+              <view class="rush-item clearfix" wx:for="{{rushGoods}}" wx:key="{{index}}">
+                <view class="rush-logo va-mid">
+                  <image src="{{item.thumbnail}}"></image>
+                </view>
+                <view class="rush-info va-mid">
+                  <view>
+                    <text class="bold ft34 over-elips" style="width:220rpx">{{item.goods_name}}</text>
+                  </view>
+                  <view class="rush-origin-price">
+                    <text class="ft28 line-through txt-light">原价：¥ {{item.origin_price}}</text>
+                  </view>
+                  <view>
+                    <view class="fl">
+                      <text class="txt-rd ft28">¥ </text><text class="txt-rd ft42">{{item.price}}</text>
+                    </view>
+                    <view class="fr">
+                      <button plain size='mini' class="rush-btn bold">立即购买</button>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item> 
+    </block>
+
+    -->
+
+    <!-- 智能下单 -->
+
+
+    <block>
+      <swiper-item>
+        <scroll-view scroll-y class="index-scroll" style="background:#f0f3f7">
+          <view class="smart-order">
+            <text class="title ft32 bold txt-gray">房屋类型</text>
+            <view>
+              <view class="selector clearfix">
+                <view class="fl" data-idx="1" tapmode="hover" data-idx="1" catchtap='showSelector' style="width:345rpx">
+                  <text class="fl">{{selectedRoom ? selectedRoom.attr_val : layout.room}}</text>
+                  <image class="fr" src="/images/open.png"></image>
+                </view>
+                <view class="fr" data-idx="2" tapmode="hover" data-idx="2" catchtap='showSelector' style="width:345rpx">
+                  <text class="fl">{{selectedHall ? selectedHall.attr_val : layout.hall}}</text>
+                  <image class="fr" src="/images/open.png"></image>
+                </view>
+              </view>
+              <view class="selector clearfix">
+                <view class="fl" data-idx="1" tapmode="hover" data-idx="3" catchtap='showSelector' style="width:230rpx">
+                  <text class="fl">{{selectedKitchen ? selectedKitchen.attr_val : layout.kitchen}}</text>
+                  <image class="fr" src="/images/open.png"></image>
+                </view>
+                <view class="fl" data-idx="2" tapmode="hover" data-idx="4" catchtap='showSelector' style="width:230rpx">
+                  <text class="fl">{{selectedWashroom ? selectedWashroom.attr_val : layout.washroom}}</text>
+                  <image class="fr" src="/images/open.png"></image>
+                </view>
+                <view class="fl" data-idx="1" tapmode="hover" data-idx="5" catchtap='showSelector' style="width:230rpx">
+                  <text class="fl">{{selectedBalcony ? selectedBalcony.attr_val : layout.balcony}}</text>
+                  <image class="fr" src="/images/open.png"></image>
+                </view>
+              </view>
+              <view class="selector clearfix">
+                <view class="fl" data-idx="1" tapmode="hover" data-idx="6" catchtap='showSelector' style="width:690rpx">
+                  <text class="fl">{{selectedStyle ? selectedStyle.attr_val : layout.style}}</text>
+                  <image class="fr" src="/images/open.png"></image>
+                </view>
+              </view>
+            </view>
+            <view style="height:30rpx"></view>
+            <text class="title ft32 bold txt-gray">房屋面积</text>
+            <view>
+              <view class="selector" data-idx="1" tapmode="hover">
+                <input placeholder='填写使用面积：㎡' bindinput='inputMeasureArea'></input>
+              </view>
+            </view>
+            <view style="height:30rpx"></view>
+            <view style="height:60rpx"></view>
+            <view>
+              <button plain class="next-btn" catchtap='toNext'>下一步</button>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+
+  </swiper>
+
+
+  <!-- 选择器 -->
+
+  <view class="selector-wrapper" wx:if="{{showPicker}}">
+    <view class="selector-operation bold">
+      <view class="fl ft34" tapmode="hover" catchtap='cancelSelector'>取消</view>
+      <view class="fr ft34" tapmode="hover" catchtap='finishSelector'>完成</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" class="select-picker" value="{{pickerIndex}}" bindchange="pickerChange">
+      <picker-view-column>
+        <view class="tc" wx:for="{{pickerItems}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+  <!-- -->
+
+  <image class="to-top" catchtap='toTop' wx:if="{{floorstatus}}" src="/images/up.png"></image>
+
+</view>

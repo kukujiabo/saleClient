@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "点单",
+    "usingComponents":{
+      "goodsSku":"/components/goodsSku/index/index",
+      "cart": "/components/cart/index/index",
+      "wave": "/components/loading/loading1/wave"
+    },
+    "navigationBarBackgroundColor": "#6bf"
+}

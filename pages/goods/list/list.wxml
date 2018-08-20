@@ -1,0 +1,31 @@
+<view>
+  <view class="search-bar">
+    <input class="search-input" confirm-type='search' bindconfirm='search' placeholder-class='search-placeholder' placeholder="输入关键字搜索商品" value='{{search}}'></input>
+  </view>
+  <view class="goods-list">
+    <view style="text-align:center" wx:if="{{goods.length == 0 && !searching}}">
+      <image src="/images/no_goods.png" style="width:200rpx;height:100rpx"></image>
+    </view>
+    <view class="goods-item" wx:for="{{goods}}" wx:key="{{item.goods_id}}" bindtap="toDetail" data-id="{{item.goods_id}}">
+      <image src="{{item.thumbnail}}"></image>
+      <view class="goods-info">
+        <text style="width:100%;display:inline-block" class="over-elips bold">{{item.goods_name}}</text>
+        <view class="goods-brand-name">
+          <text>{{item.brand_name}}</text>
+        </view>
+        <view class="bold">
+          <text class="goods-price" wx:if="{{item.min_money == item.max_money}}">
+            ¥ {{item.price}}
+          </text>
+          <text class="goods-price" wx:else>
+            ¥ {{item.min_money}} ～ ¥ {{item.max_money}}
+          </text>
+          <!--
+          <text style="float:right" class="goods-sale">销量：0 </text>
+          -->
+        </view>
+      </view>
+    </view>
+    <view style="clear:both"></view>
+  </view>
+</view>

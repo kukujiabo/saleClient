@@ -1,0 +1,93 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<view style="position:{{position}}">
+  <wave id="wave"></wave>
+  <goods-standard id="goods_standard" bindcartcountchange="cartCountListener" bindclosestandard="closeStandard" attrWarpHeight="50"></goods-standard>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{good.goods_image}}">
+      <swiper-item>
+        <image src="{{item.img}}" class="slide-image" width="750" height="750" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="good-info" wx:if="{{good}}">
+    <view class="good-name info-item">
+      <view style="padding:8rpx 0;" class="clearfix">
+        <text class="fl" style="font-size:36rpx;">{{good.goods_name}}</text>
+        <text class="fr bold" style="color:#ff0000;font-size:42rpx;">¥ {{minPrice}}</text>
+      </view>
+      <view class="clearfix numbers" style="padding:8rpx 0;">
+        <text class="fl">月销：{{good.real_sales ? good.real_sales : 0}}</text>
+
+        <text class="fr">库存：{{good.stock}}</text>
+        <!--
+        <text>销量：{{good.real_sales ? good.real_sales : 0}}</text>
+        -->
+      </view>
+    </view>
+    <view class="h20" wx:if="{{likeGoods.length}}"></view>
+    <view class="info-item attribute clearfix" wx:if="{{likeGoods.length}}">
+      <view style="padding:8rpx 0;">
+        <text class="ft32" style="font-size:28rpx;">猜你喜欢</text>
+      </view>
+      <view>
+        <view class="promotions">
+          <view class="promotion-item {{( index % 2 == 1 && index != 0) ? 'promotion-right' : 'promotion-left' }}" wx:for="{{likeGoods}}" wx:key="{{index}}" data-idx="{{index}}" catchtap='toLikyDetail' hidden="{{index > 5 && hideMore }}">
+            <view>
+              <image src="{{item.picture}}"></image>
+            </view>
+            <view class="info">
+              <text class="bold ft34">{{item.goods_name}}</text>
+            </view>
+            <view class="info clearfix">
+              <view class="fl">
+                <text class="txt-rd ft28">¥ </text>
+                <text class="txt-rd ft42">{{item.price}}</text>
+              </view>
+            </view>
+            <view style="height:16rpx"></view>
+          </view>
+        </view>
+      </view>
+      <view class="show-more" wx:if="{{likeGoods.length > 5}}">
+        <button class="st-btn ft28" catchtap='showMoreGoods'>{{hideMore ? '查看全部' : '收起'}}</button>
+      </view>
+    </view>
+    <view class="h20"></view>
+    <view class="info-item attribute clearfix">
+      <view style="padding:8rpx 0;">
+        <text class="ft32 text-break" style="font-size:28rpx;">商品简介</text>
+      </view>
+      <view>
+        <text class="ft28 txt-dark text-break" style="font-size:28rpx;">{{good.introduction}}</text>
+      </view>
+    </view>
+    <view class="h20"></view>
+    <view class="info-item clearfix">
+      <view style="padding:8rpx 0;">
+        <text class="ft32">商品详情</text>
+      </view>
+      <view class="clearfix" style="overflow:none !important;">
+
+        <view class="media-intro wxParse">
+          <template is="wxParse" data="{{wxParseData:description.nodes}}" />
+        </view>
+      </view>
+    </view>
+    <view style="height:100rpx"></view>
+    <view class="buy">
+      <view class="btns favorite va-mid">
+        <image class="va-mid" src="/images/favorite-active.png"></image>
+      </view>
+      <view class="btns cart var-mid" bindtap="toCart">
+        <image class="va-mid" src="/images/cart-detail.png"></image>
+        <text class="cart_count">{{cartCount}}</text>
+      </view>
+      <view class="btns incart">
+        <button plain class="ft24 va-mid txt-wt bold" data-type="2" catchtap='showGoodStandard'>加入购物车</button>
+      </view>
+      <view class="btns purchase">
+        <button plain class="ft24 va-mid txt-wt bold" data-type="1" catchtap='showGoodStandard'>立即购买</button>
+      </view>
+    </view>
+  </view>
+</view>

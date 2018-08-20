@@ -1,0 +1,90 @@
+<view class="coupon-list-cont">
+    <view class="tab">
+      <text bindtouchstart='touchTap' class="tab-itm {{actTabs[0]}}" data-seq="0">全部</text>
+      <text bindtouchstart='touchTap' class="tab-itm {{actTabs[1]}}" data-seq="1">未使用</text>
+      <text bindtouchstart='touchTap' class="tab-itm {{actTabs[2]}}" data-seq="2">已使用</text>
+      <text bindtouchstart='touchTap' class="tab-itm {{actTabs[3]}}" data-seq="3">已过期</text>
+    </view>
+    <scroll-view scroll-y style="position:fixed;left:0;right:0;bottom:0;top:105rpx">
+      <block wx:for="{{couponItem}}" wx:for-index="idx">
+          <!-- 未使用  -->
+          <!-- 优惠券状态：0未领用，1已领取（未使用），2已使用，3已过期  -->
+          <view wx:if="{{item.state == 1 && (actTabs[item.state] == 'active' || actTabs[0] == 'active' )}}">
+              <view class="coupon-list"  bindtap='exchangeTap' data-idx="{{idx}}">
+                  <image class='coupon-bg' src='{{item.coupon_image ? item.coupon_image : "/images/coupon-bg-1.png"}}' />
+                  <view class='coupon-cont' wx:if="{{!item.coupon_image}}">
+                      <view class='coupon-l'>
+                          <view class='postage' wx:if="{{item.deduction_type == 1}}">{{item.percentage / 10}}折</view>
+                          <view class='postage' wx:if="{{item.deduction_type == 2}}">{{item.money}}元</view>
+                      </view>
+                      <view class='coupon-r'>
+                          <view class='name'>{{item.coupon_name}}</view>
+                          <view class='type'>编号：{{item.coupon_code}}</view>
+                          <view class='dueTime'>
+                              <image src='/images/dueTime.png' />有效期：
+                              <text decode='true'>{{item.start_time ? (item.start_time + '&nbsp; 至&nbsp;') : ''}}</text>
+
+                              <text>{{item.end_time ? item.end_time : '长期有效'}}</text>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+          <!-- 已使用  -->
+          <view wx:if="{{item.state == 2 && (actTabs[item.state] == 'active' || actTabs[0] == 'active' ) }}">
+              <view class="coupon-list coupon-duetime">
+                  <image class='coupon-bg coupon-duetime-bg' src='/images/coupon-bg-2.png' />
+                  <view class='coupon-cont'>
+                      <view class='coupon-l'>
+                          <view class='postage' wx:if="{{item.deduction_type == 1}}">{{item.percentage / 10}}折</view>
+                          <view class='postage' wx:if="{{item.deduction_type == 2}}">{{item.money}}元</view>
+                      </view>
+                      <view class='coupon-r'>
+                          <view class='name'>{{item.coupon_name}}</view>
+                          <view class='type'>编号：{{item.coupon_code}}</view>
+                          <view class='dueTime'>
+                              <image src='/images/dueTime.png' />有效期：
+                              <text decode='true'>{{item.start_time ? (item.start_time + '&nbsp; 至&nbsp;') : ''}}</text>
+
+                              <text>{{item.end_time ? item.end_time : '长期有效'}}</text>
+                          </view>
+                      </view>
+                      <view class='duetime-img'>
+                          <image src='/images/state-1.png' />
+                      </view>
+                  </view>
+              </view>
+          </view>
+          <!-- 已过期  -->
+          <view wx:if="{{item.state == 3  && (actTabs[item.state] == 'active' || actTabs[0] == 'active' ) }}">
+              <view class="coupon-list coupon-duetime">
+                  <image class='coupon-bg coupon-duetime-bg' src='/images/coupon-bg-2.png' />
+                  <view class='coupon-cont'>
+                      <view class='coupon-l'>
+                          <view class='postage' wx:if="{{item.deduction_type == 1}}">{{item.percentage / 10}}折</view>
+                          <view class='postage' wx:if="{{item.deduction_type == 2}}">{{item.money}}元</view>
+                      </view>
+                      <view class='coupon-r'>
+                          <view class='name'>{{item.coupon_name}}</view>
+                          <view class='type'>编号：{{item.coupon_code}}</view>
+                          <view class='dueTime'>
+                              <image src='/images/dueTime.png' />有效期：
+                              <text decode='true'>{{item.start_time ? (item.start_time + '&nbsp; 至&nbsp;') : ''}}</text>
+
+                              <text>{{item.end_time ? item.end_time : '长期有效'}}</text>
+                          </view>
+                      </view>
+                      <view class='duetime-img'>
+                          <image src='/images/state-2.png' />
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </block>
+    </scroll-view>
+    <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+    <view class='norecord pt400' wx:if="{{!couponItem}}">
+        <image src='/images/cry.png' style='width:128rpx;height:128rpx;'></image>
+        <text>暂无优惠券</text>
+    </view>
+</view>

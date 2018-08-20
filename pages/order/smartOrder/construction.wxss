@@ -1,0 +1,57 @@
+page {
+  background: #f0f3f7;
+}
+
+.wrap {
+  padding: 50rpx 35rpx;
+}
+
+.wrap .title {
+  display: block;
+  margin: 10rpx 0 30rpx 0;
+}
+
+.cos-item {
+  border-radius: 15rpx;
+  padding: 16rpx 10rpx;
+  background: #fff;
+  box-sizing: border-box;
+  min-height: 90rpx;
+  line-height: 90rpx;
+  margin-bottom: 20rpx;
+}
+
+.cos-item view {
+  display: inline-block;
+  padding: 0 20rpx 0 10rpx;
+}
+
+.cos-type {
+  height: 100%;
+  box-sizing: border-box;
+  width:100rpx;
+}
+
+.cos-class {
+  width: 560rpx;
+  box-sizing: border-box;
+  border-left: 3rpx solid #f0f3f7;
+}
+
+.cos-class image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.cos-class view {
+  padding: 8rpx;
+  box-sizing: border-box;
+  width: 50%;
+  border: 0;
+}
+
+.next-btn {
+  background: #116fea !important;
+  border: 0 !important;
+  color: #fff !important;
+}

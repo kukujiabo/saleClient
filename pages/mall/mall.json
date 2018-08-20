@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": false,
+  "backgroundColor": "#d81e06",
+  "usingComponents": {
+    "wave": "/components/loading/loading1/wave"
+  }
+}

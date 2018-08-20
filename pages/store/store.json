@@ -1,0 +1,13 @@
+{
+
+    "navigationBarTitleText": "附近门店",
+
+    "usingComponents": {
+
+      "wave": "/components/loading/loading1/wave",
+
+      "dialog": "/components/dialog/lightDialog/light-dialog"
+      
+    }
+
+}

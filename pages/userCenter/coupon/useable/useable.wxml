@@ -1,0 +1,32 @@
+<view class="coupon-list-cont">
+    <block wx:for="{{couponItem}}" wx:for-index="idx">
+        <!-- 未使用  -->
+        <!-- 优惠券状态：0未领用，1已领取（未使用），2已使用，3已过期  -->
+
+        <view class="coupon-list" bindtap='exchangeTap' data-idx="{{idx}}">
+            <image class='coupon-bg' src='/images/coupon-bg-1.png' />
+            <view class='coupon-cont'>
+                <view class='coupon-l'>
+                    <view class='postage' wx:if="{{item.deduction_type == 1}}">{{item.percentage /10}}折</view>
+                    <view class='postage' wx:if="{{item.deduction_type == 2}}">{{item.money}}元</view>
+                </view>
+                <view class='coupon-r'>
+                    <view class='name'>{{item.coupon_name}}</view>
+                    <view class='type'>编号：{{item.coupon_code}}</view>
+                    <view class='dueTime'>
+                        <image src='/images/dueTime.png' />有效期：
+                        <text decode='true'>{{item.start_time ? (item.start_time + '&nbsp; 至&nbsp;') : ''}}</text>
+
+                        <text>{{item.end_time ? item.end_time : '长期有效'}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </block>
+    <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+    <view class='norecord pt400' wx:if="{{!couponItem}}">
+        <image src='/images/cry.png' style='width:128rpx;height:128rpx;'></image>
+        <text>暂无可用优惠券</text>
+    </view>
+</view>

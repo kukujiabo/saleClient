@@ -1,0 +1,162 @@
+page {
+    background: #f6f6f6;
+}
+
+.pay-cont {
+    padding-bottom: 100rpx;
+}
+
+.table-num {
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 20rpx 0;
+    padding: 0 20rpx;
+    color: #000;
+    background: #fff;
+    margin-bottom: 40rpx;
+}
+
+.table-num text {
+    width: 130rpx;
+    color: #f00;
+    font-weight: bold;
+}
+
+.orderInfo {
+    background: #fff;
+}
+
+.orderSum {
+    text-align: right;
+    color: #000;
+    line-height: 120rpx;
+    padding: 0 30rpx;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.orderSum text {
+    color: #ff6100;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    height: 80rpx;
+    padding: 8rpx 30rpx;
+    border-bottom: 1px solid #f8f8f8;
+    align-items: center;
+    color: #666;
+}
+
+.order-item .name {
+    width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.order-item view.w290 {
+    width: 290rpx;
+    display: flex;
+}
+
+.order-item .order-num {
+    width: 110rpx;
+    text-align: right;
+}
+
+.order-item .price {
+    width: 180rpx;
+    font-weight: bold;
+    text-align: right;
+}
+
+.message {
+    background: #fff;
+    padding: 30rpx;
+    margin-bottom: 50rpx;
+    color: #666;
+}
+
+.message text {
+    width: 100rpx;
+}
+
+.message input {
+    width: 650rpx;
+    color: #999;
+    font-size: 22rpx;
+}
+
+.order-btn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    z-index: 10;
+}
+
+.order-btn button {
+    background: #6bf;
+    color: #fff;
+    border-radius: 0;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.list_item {
+    text-align: right;
+    padding: 20rpx 30rpx 0;
+}
+
+.list_item view {
+    padding-top: 10rpx;
+}
+
+.recipients-addr {
+    padding-top: 20rpx;
+}
+
+.recipients-addr text {
+    max-width: 300rpx;
+}
+
+.icon {
+    padding: 8rpx;
+}
+
+.icon image {
+    width: 28rpx;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.addr {
+    background: #fff;
+    align-items: center;
+}
+
+.addr-txt-top view {
+    display: inline-block;
+    width: 50%;
+}
+
+.addr-txt {
+    padding: 30rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.txt-l {
+    text-align: left;
+}
+
+.txt-r {
+    text-align: right;
+}
+
+.justify-c {
+    padding: 48rpx 0;
+    text-align: center;
+}

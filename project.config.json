@@ -1,0 +1,122 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wx082e2f51013504fc",
+	"projectname": "%E6%9D%A5%E6%9D%90",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "测试扫码",
+					"pathName": "pages/mall/mall",
+					"query": "uid=123123",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "关于我们",
+					"pathName": "pages/userCenter/aboutUs/aboutUs",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/userCenter/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/signIn/signIn",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/member/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单下单成功",
+					"pathName": "pages/order/success/success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/goods/detail/detail",
+					"query": "id=601695306"
+				},
+				{
+					"id": -1,
+					"name": "新首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新分类",
+					"pathName": "pages/classification/classification",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/userCenter/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "oldcate",
+					"pathName": "pages/category/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券详情",
+					"pathName": "pages/userCenter/coupon/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "积分商城",
+					"pathName": "pages/userCenter/integralMall/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "积分商城",
+					"pathName": "pages/order/mapOrder/mapOrder",
+					"query": ""
+				}
+			]
+		}
+	}
+}

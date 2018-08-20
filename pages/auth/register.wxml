@@ -1,0 +1,20 @@
+<view class="app-wrapper">
+  <view class="tc logo">
+    <image src="/images/logo.png"></image>
+  </view>
+  <view class="reg-box">
+    <view>
+      <input class="tc" placeholder='请输入手机号' bindinput="inputPhone" value="{{phone}}"></input>
+    </view>
+    <view class="clearfix">
+      <input class="tc fl" placeholder='填写验证码' bindinput="inputCode" style="width:58%;"></input>
+      <button class="fr" plain style="width:38%;height:92rpx;line-height:92rpx" bindtap="sendVerifyCode" disabled='{{forbid}}'>{{tapContent}}</button>
+    </view>
+    <view>
+      <button plain open-type='getUserInfo' bindgetuserinfo="getUserInfo">微信登录</button>
+    </view>
+  </view>
+  <view class="app-wrapper tc">
+    <text style="font-weight:200;color:#999;font-size:28rpx;">为了更好的服务，请您先绑定手机号！</text>
+  </view>
+</view>

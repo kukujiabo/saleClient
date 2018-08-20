@@ -1,0 +1,95 @@
+.wrap {
+  padding: 0 32rpx;
+}
+
+.integral-wrap {
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+}
+
+
+.coupon-list {
+  width: 686rpx;
+  height: 195rpx;
+  margin: 24rpx 32rpx 0;
+  position: relative;
+}
+
+.coupon-bg {
+  position: absolute;
+  width: 686rpx;
+  height: 195rpx;
+  z-index: 1;
+}
+
+.coupon-cont {
+  position: absolute;
+  width: 674rpx;
+  height: 192rpx;
+  z-index: 2;
+  display: flex;
+}
+
+.coupon-l {
+  width: 200rpx;
+  height: 192rpx;
+  line-height: 192rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.coupon-l .postage {
+  font-size: 42rpx;
+}
+
+.coupon-l .money {
+  font-size: 72rpx;
+}
+
+.coupon-l .money text {
+  font-size: 24rpx;
+}
+
+.coupon-r {
+  margin-left: 30rpx;
+  display: flex;
+  flex-flow: column;
+}
+
+.coupon-r .name {
+  font-size: 32rpx;
+  color: #19af1e;
+  padding: 25rpx 0 30rpx 0;
+}
+
+.coupon-r .type {
+  font-size: 24rpx;
+  color: #000;
+}
+
+.coupon-r .dueTime {
+  font-size: 22rpx;
+  color: #999;
+  padding-top: 15rpx;
+  display: flex;
+  align-items: center;
+}
+
+.coupon-r .dueTime image {
+  width: 22rpx;
+  height: 22rpx;
+  padding-right: 10rpx;
+}
+
+.coupon-duetime .coupon-r .name {
+  color: #c5c5c5;
+}
+
+.coupon-duetime .coupon-r .type {
+  color: #a7a7a7;
+}
+
+.coupon-duetime .coupon-r .dueTime {
+  color: #d1d1d1;
+}

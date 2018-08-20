@@ -1,0 +1,86 @@
+{
+  "tabBar": {
+    "color": "#9FADBF",
+    "selectedColor": "#116FEA",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/index_active.png",
+        "iconPath": "images/index_inactive.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/category_active.png",
+        "iconPath": "images/category_inactive.png",
+        "pagePath": "pages/classification/classification",
+        "text": "分类"
+      },
+      {
+        "selectedIconPath": "images/cart_active.png",
+        "iconPath": "images/cart_inactive.png",
+        "pagePath": "pages/cart/cart",
+        "text": "购物车"
+      },
+      {
+        "selectedIconPath": "images/user_center_active.png",
+        "iconPath": "images/user_center_inactive.png",
+        "pagePath": "pages/userCenter/index",
+        "text": "个人"
+      }
+    ]
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/auth/register",
+    "pages/worpspace/list/list",
+    "pages/order/list/list",
+    "pages/order/success/success",
+    "pages/location/city/city",
+    "pages/goods/list/list",
+    "pages/brand/detail/detail",
+    "pages/takeout/shop/shop",
+    "pages/takeout/detail/detail",
+    "pages/store/store",
+    "pages/member/login/login",
+    "pages/address/edit/edit",
+    "pages/signIn/signIn",
+    "pages/member/mobile/mobile",
+    "pages/member/agreement/agreement",
+    "pages/takeout/order/order",
+    "pages/member/user/user",
+    "pages/takeout/order/detail/detail",
+    "pages/takeout/pay/pay",
+    "pages/consume/consume",
+    "pages/address/address",
+    "pages/store/detail/detail",
+    "pages/consume/detail/detail",
+    "pages/logs/logs",
+    "pages/text/content",
+    "pages/category/index",
+    "pages/cart/cart",
+    "pages/userCenter/index",
+    "pages/goods/detail/detail",
+    "pages/brand/brand",
+    "pages/order/order",
+    "pages/order/detail/detail",
+    "pages/userCenter/aboutUs/aboutUs",
+    "pages/userCenter/afterSales/afterSales",
+    "pages/order/returnOrder/returnOrder",
+    "pages/userCenter/coupon/coupon",
+    "pages/userCenter/qrcode/qrcode",
+    "pages/mall/mall",
+    "pages/classification/classification",
+    "pages/order/smartOrder/construction",
+    "pages/order/smartGoods/smartGoods",
+    "pages/userCenter/coupon/detail/detail",
+    "pages/userCenter/integralMall/index",
+    "pages/order/mapOrder/mapOrder"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小骏马网",
+    "navigationBarTextStyle": "black"
+  }
+}

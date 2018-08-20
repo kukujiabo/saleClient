@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "消费详情",
+    "backgroundColor": "#f6f6f6",
+    "usingComponents": {
+      "wave": "/components/loading/loading1/wave"
+    }
+}

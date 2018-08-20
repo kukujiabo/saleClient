@@ -1,0 +1,119 @@
+<view class="orderDetail">
+  <dialog id="dialog"></dialog>
+  <wave id="wave"></wave>
+  <view class='state cards'>
+    <view wx:if="{{detail.order_status == 1}}">待付款</view>
+    <view wx:if="{{detail.order_status == 2 && detail.shipping_status < 2}}">已接单 </view>
+    <view wx:if="{{detail.order_status == 2 && detail.shipping_status == 2}}">配送中 </view>
+    <view wx:if="{{detail.order_status == 3}}">已完成</view>
+    <view wx:if="{{detail.order_status == -1}}">已取消</view>
+    <view wx:if="{{detail.order_status == 1}}" class='thanks'>请尽快支付！</view>
+    <view wx:if="{{detail.order_status == 2 && detail.shipping_status == 1}}" class='thanks'>订单已支付，我们会尽快为您配送！</view>
+    <view wx:if="{{detail.order_status == 2 && detail.shipping_status == 2}}" class='thanks'>感谢您的支持，配送员正在赶路中～</view>
+    <view wx:if="{{detail.order_status == 3}}" class='thanks'>感谢您的支持，期待您下次惠顾！</view>
+    <view class="operation-line">
+      <view wx:if="{{detail.order_status == 1}}">
+        <view class="operation pay-btn" bindtap="toPay" data-idx="{{idx}}" data-sn="{{detail.order_num}}" data-id="{{detail.id}}">付款</view>
+      </view>
+      <view wx:if="{{detail.order_status == 2 && detail.shipping_status == 2}}">
+        <view class="operation receive-btn" bindtap="receipted" data-idx="{{idx}}" data-sn="{{detail.order_num}}" data-id="{{detail.id}}">签收</view>
+      </view>
+      <view wx:if="{{detail.order_status == 2 && detail.shipping_status <= 2}}">
+        <view class="operation receive-btn" bindtap="cancel" data-idx="{{idx}}" data-sn="{{detail.order_num}}" data-id="{{detail.id}}">取消订单</view>
+      </view>
+      <view wx:if="{{detail.order_status == 3}}">
+        <view class="operation receive-btn" bindtap="customerService" data-idx="{{idx}}" data-sn="{{detail.order_num}}" data-id="{{detail.id}}">售后退款</view>
+      </view>
+    </view>
+  </view>
+  <view class='addr-list cards' id='{{detail.address_id}}'>
+    <view class='addr'>
+      <view class='addr-txt'>
+        <view class='addr-txt-top'>
+          <view class='recipients'>{{detail.user_name}}</view>
+          <view class='tele' style="text-align:right">{{detail.mobile}}</view>
+        </view>
+        <view class='recipients-addr'>{{detail.address}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='shopName cards'>
+    <view class='flex-1 align-c'>
+      <image src='{{detail.shop_logo}}' class='shopImg' />
+      <text>{{detail.shop_name}}</text>
+    </view>
+    <view>
+      <image class='r' src='/images/arrow.png' style='width:14rpx;height:26rpx;' />
+    </view>
+  </view>
+  <view class='orderInfo cards'>
+    <view class='order-item'>
+      <text>订单编号：</text>
+      <view>
+        <text class='price'>{{detail.order_num}}</text>
+      </view>
+    </view>
+    <block wx:for="{{detail.list}}" wx:for-item="order">
+      <view class='order-item'>
+        <text class='name'>{{order.goods_name}}</text>
+        <view class='w290'>
+          <text class='order-num'>×{{order.num}}</text>
+          <text class='price'>¥ {{order.price}}</text>
+        </view>
+      </view>
+    </block>
+    <view class='order-item'>
+      <text>商品总价：</text>
+      <view class='flex-1 align-c'>
+        <text>¥ {{detail.total}}</text>
+      </view>
+    </view>
+    <view class='order-item'>
+      <text>运费：</text>
+      <view class='flex-1 align-c'>
+        <text>¥ 0.00</text>
+      </view>
+    </view>
+    <view class='order-item'>
+      <text>餐盒费：</text>
+      <view class='flex-1 align-c'>
+        <text>¥ 0.00</text>
+      </view>
+    </view>
+    <view class='order-item'>
+      <text>订单总价：</text>
+      <view class='flex-1 align-c'>
+        <text>¥ {{detail.total}}</text>
+      </view>
+    </view>
+    <view class='order-item'>
+      <text>优惠券抵用：</text>
+      <view class='flex-1 align-c'>
+        <text wx:if="{{detail.coupon_money > 0}}">¥ {{detail.coupon_money}}</text>
+        <text wx:else>未使用</text>
+      </view>
+    </view>
+    <view class='order-item'>
+      <text>应付金额：</text>
+      <view class='flex-1 align-c'>
+        <text>¥ {{detail.Total}}</text>
+      </view>
+    </view>
+    <view wx:if="{{detail.user_money > 0}}" class='order-item'>
+      <text>余额支付：</text>
+      <view class='flex-1 align-c'>
+        <text>¥ {{detail.user_money}}</text>
+      </view>
+    </view>
+    <view wx:if="{{detail.pay_money > 0 && detail.order_status > 1}}" class='order-item'>
+      <text>微信支付：</text>
+      <view class='flex-1 align-c'>
+        <text>¥ {{detail.pay_money}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='flex-1 message' wx:if="{{detail.buyer_message}}">
+    <text>留言：</text> {{detail.buyer_message}}
+  </view>
+</view>

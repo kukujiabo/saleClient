@@ -1,0 +1,55 @@
+<form bindsubmit="userSubmit" bindreset="formReset">
+  <wave id="wave"></wave>
+  <dialog id="dialog"></dialog>
+  <view class='member-cont show-up'>
+    <view class="userinfo" wx:if="{{userInfo}}">
+      <view>
+        <image class="userinfo-avatar" src="{{userInfo.pic_head}}" background-size="cover" />
+        <text class="userinfo-nickname over-elips">{{userInfo.nick_name}}</text>
+      </view>
+      <input style='display:none;' value='{{userInfo.user_headimg}}' name="user_headimg" />
+      <input style='display:none;' value='{{userInfo.member_name}}' name="member_name" />
+    </view>
+    <view class="userinfo" wx:else>
+      <image class="userinfo-avatar" src="/images/user.png" background-size="cover" />
+      <text class="userinfo-nickname">商城会员</text>
+    </view>
+    <view class="add-addr" bindtap="showNotice">
+      <view class='add-addr-list'>
+        <image src='/images/job.png' style='width:40rpx;height:40rpx;' />
+        <view class='flex-2 w620'>
+          <!-- <view class='phone'>{{userInfo.real_name}}</view> -->
+          <input class='phone' value="{{userInfo.member_name}}" name='member_name' bindinput="userNameBind" disabled='{{disabled}}' />
+        </view>
+      </view>
+      <view class='add-addr-list'>
+        <image src='/images/phone.png' style='width:40rpx;height:40rpx;' />
+        <view class='flex-2 w620'>
+          <view class='phone'>{{userInfo.phone}}</view>
+          <input style='display:none;' name='phone' value='{{userInfo.phone}}'></input>
+          <button class='phoneTap {{disabled ? "hidden" : ""}}' bindtap='phoneTap'>更换手机号</button>
+        </view>
+      </view>
+      <view class='add-addr-list'>
+        <image src='/images/sex.png' style='width:40rpx;height:40rpx;' />
+        <view class="w620">
+          <radio-group class="radio-group" name="sex" data-sex="" bindchange="sexChange">
+            <label class="radio" wx:for="{{sex}}">{{item.name}}
+              <radio value="{{item.value}}" checked="{{item.checked}}" disabled='{{disabled}}' />
+            </label>
+          </radio-group>
+        </view>
+      </view>
+      <view class='add-addr-list'>
+        <image src='/images/date.png' style='width:40rpx;height:40rpx;' />
+        <picker mode="date" value="{{date}}" start="1900-01-01" end="2100-01-01" bindchange="bindDateChange" data-date='{{date}}' disabled='{{disabled_date}}'>
+          <view class="picker w620">{{date}}</view>
+          <input style='display:none;' value='{{birthday}}' name="date" />
+        </picker>
+      </view>
+      <view class='reminder'>温馨提示：生日只可设定一次</view>
+    </view>
+    <button class='btn mt80' hover-class="btn-hover" formType="submit">{{editBtn}}</button>
+  </view>
+
+</form>

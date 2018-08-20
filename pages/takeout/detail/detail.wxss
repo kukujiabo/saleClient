@@ -1,0 +1,62 @@
+/* @import "/pages/takeout/shop/shop.wxss"; */
+
+page {
+  background: #fff;
+}
+
+.goodsDetail {
+  padding-bottom: 140rpx;
+}
+
+.goodsDetail .banner {
+  width: 750rpx;
+  height: 350rpx;
+}
+
+.goodsDetail .name {
+  padding: 20rpx 30rpx;
+  color: #333;
+  font-size: 32rpx;
+}
+
+.goodsDetail .sales {
+  padding: 0 30rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.goodsDetail .price {
+  padding: 0 30rpx 30rpx;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.goodsDetail .price button {
+  padding: 0 40rpx;
+  margin: 0;
+  background: #6bf;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  border-radius: 40rpx;
+}
+
+.goodsDetail .info {
+  padding: 30rpx;
+}
+
+.goodsDetail .info .tit {
+  color: #666;
+  padding-bottom: 20rpx;
+  display: flex;
+}
+
+.goodsDetail .info .noInfo {
+  color: #333;
+}

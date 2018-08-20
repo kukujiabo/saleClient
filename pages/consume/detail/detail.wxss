@@ -1,0 +1,119 @@
+@import '/app.wxss';
+
+page {
+  background: #f4f4f4;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.card-box {
+  background: #fff;
+  border-radius: 5px;
+  padding: 30rpx;
+  box-shadow: 0 0 24rpx #666;
+}
+
+.consume-order {
+  margin-bottom: 24rpx;
+}
+
+.consume-order view {
+  padding: 12rpx 0;
+  font-size: 32rpx;
+}
+
+.consume-details-cont {
+  font-size: 28rpx;
+  padding: 28rpx;
+  background: #f4f4f4;
+  height: 100%;
+}
+
+.expense, .invoice {
+  margin: 30rpx;
+}
+
+.consume-detalis {
+  margin: 36rpx 30rpx;
+}
+
+.goodconsume-goods {
+  margin: 20rpx 30rpx;
+}
+
+.consume-order text, .consume-detalis text, .expense text, .invoice text {
+  line-height: 42rpx;
+  display: inline-flex;
+}
+
+.consume-order text, .consume-detalis text {
+  display: inline-flex;
+}
+
+.consume-goods {
+  padding: 0 30rpx;
+  display: flex;
+  height: 188rpx;
+  align-items: center;
+}
+
+.consume-goods .img {
+  width: 148rpx;
+  height: 148rpx;
+  overflow: hidden;
+  margin: 20rpx 32rpx 20rpx 0;
+}
+
+.consume-goods image {
+  width: 148rpx;
+  height: 148rpx;
+}
+
+.consume-goods .txt {
+  width: 680rpx;
+  /* width:510rpx; */
+}
+
+.consume-goods .txt .txt-t {
+  padding-bottom: 32rpx;
+  font-size: 33rpx;
+  color: #000;
+}
+
+.txt-t, .txt-b, .expense view, .invoice view, .expense-pay {
+  justify-content: space-between;
+}
+
+.txt-t text {
+  display: inline-block;
+}
+
+.sumary {
+  padding: 8rpx 0;
+}
+
+.item-price {
+  color: #ff0000;
+}
+
+.expense-pay {
+  margin: 0 30rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 36rpx;
+  color: #000;
+  padding: 30rpx 0 50rpx 0;
+}
+
+.w160 {
+  width: 160rpx;
+}
+
+.consume-order .barcode-wrap {
+  padding: 30rpx;
+}
+
+.barcode {
+  height: 90rpx;
+  width: 100%;
+}

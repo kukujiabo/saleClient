@@ -1,0 +1,49 @@
+/* pages/location/city/city.wxss */
+.search-bar {
+  padding: 36rpx;
+  background: #fff;
+}
+.search-bar input {
+  border-radius: 35rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  color: #999;
+  font-weight: 200;
+  background: #f0f3f7;
+
+}
+.city-wrapper {
+  padding: 36rpx;
+}
+
+.city-list {
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #cfcfcf;
+}
+
+.city-list text {
+  padding: 5rpx 8rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #999;
+  color: #666;
+  font-weight: 200;
+  margin: 15rpx 8rpx;
+  display: inline-block;
+  height: 55rpx;
+  line-height: 55rpx;
+  vertical-align: middle;
+}
+
+.city-list text.active {
+  color: #fff;
+  border: 1rpx solid #d81e06;
+  background: #d81e06;
+  font-weight: 400;
+}
+
+.char-key {
+  padding: 24rpx 0rpx;
+  font-weight: 200;
+  display: block;
+}

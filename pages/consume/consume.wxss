@@ -1,0 +1,19 @@
+page{background: #fff; }
+.consume-cont{color: #333;font-size: 28rpx;background: #fff;padding-top:20rpx;}
+.consume-list{ height: 140rpx;border-bottom: 1px solid #eee;
+margin: 0 30rpx;width:690rpx;display: flex;overflow: hidden; }
+.consumeGoods{width:100rpx;height:100rpx;margin:20rpx 20rpx 0 10rpx;}
+.consumeGoods image{ width:100rpx;height:100rpx;overflow: hidden;}
+.consumeTxt{display: flex;flex-flow: column; align-items: center;font-size: 22rpx;color: #999;width: 670rpx;height: 140rpx;
+/* width: 550rpx; */
+}
+/* .consume-list:last-child{border-bottom:none;} */
+.consume-list-t,.consume-list-b{display: flex;justify-content: space-between;width:670rpx;}
+.consume-list-t{padding: 20rpx 0 12rpx 0;}
+.consume-list-t view{font-size: 32rpx;color: #000;font-weight:400;
+width: 400rpx;overflow: hidden;text-overflow:ellipsis;word-wrap:normal;white-space:nowrap;}
+.consume-list-t text{font-size: 36rpx;color: #dc4848;font-weight:600;}
+.consume-list-b image{width:27rpx;height:23rpx;padding-right: 12rpx; vertical-align: middle; }
+.consume-list .way{color: #666;}
+.consume-list .time{color: #999;font-size: 24rpx;}
+

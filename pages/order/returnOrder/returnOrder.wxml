@@ -1,0 +1,7 @@
+<view class="app-wrapper">
+  <text>取消订单：{{sn}}</text>
+  <view style="height:20rpx"></view>
+  <textarea rows="3" placeholder='请填写取消订单的原因...' bindinput='inputReason'></textarea>
+  <view style="height:20rpx"></view>
+  <button plain class="theme-bg txt-wt" bindtap='confirm'>确定取消</button>
+</view>

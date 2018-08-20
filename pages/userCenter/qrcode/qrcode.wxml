@@ -1,0 +1,10 @@
+<view class="app-wrapper">
+  <view class="qrcode-wrapper tc">
+    <view>
+      <image src="{{imgUrl}}"></image>
+    </view>
+    <view>
+      <button size="mini" class="save" catchtap='saveImage'>保存图片</button>
+    </view>
+  </view>
+</view>

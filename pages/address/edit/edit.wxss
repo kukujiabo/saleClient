@@ -1,0 +1,12 @@
+page{background: #fff;}
+.add-addr-list{margin:0rpx 30rpx;display: flex;align-items: center;
+border-bottom: 1px solid #eee;height: 100rpx;line-height: 100rpx;
+font-size: 28rpx;color: #000; }
+.add-addr-list radio{transform:scale(0.7);margin-left: 25rpx;} 
+.add-addr-list text{width: 140rpx;font-size: 28rpx;color: #000;}
+.add-addr-list input{font-size: 28rpx;color: #000;width: 520rpx;}
+.addr-picker{width: 100%;}
+.addr-picker text{display: inline-flex;}
+.addr-picker view{display: inline-flex;}
+.ml110{margin-left: 110rpx;}
+.location { width: 42rpx; height:42rpx; padding: 15rpx 9rpx; }

@@ -1,0 +1,28 @@
+<form bindsubmit="bindingformSubmit" bindreset="">
+  <wave id="wave"></wave>
+  <view class='login-cont'>
+    <image class='logo' src='/images/xiaojunma-log.jpeg' />
+    <!--
+    <view class='login-list'>
+      <text>会员名</text>
+      <input name="username" placeholder-class="t-gray" placeholder='请填写昵称或姓名' name='name' value='{{name}}' bindinput="userNameBind" type='text' />
+    </view>
+    -->
+    <view class='login-list'>
+      <text>手机号</text>
+      <input name="username" placeholder-class="t-gray" maxlength="11" placeholder='请输入手机号码' name='phone' value='{{phoneValue}}' bindinput="validatemobile" type='number' />
+      <button class='btn-yzm' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权手机号</button>
+    </view>
+    <view class='login-list'>
+      <text>验证码</text>
+      <input bindinput="yzmImport" placeholder='请输入验证码' name='code' value='{{code}}' type='number' />
+      <button bindtap='sendTap' class='btn-yzm' disabled="{{forbid}}">{{tapContent}}</button>
+    </view>
+    <view class='agreement' bindtap='agreementTap'>
+      <image src='/images/argeement.jpg' /> 注册即为同意
+      <text class='red'>《注册协议》</text>
+    </view>
+    <button disabled="{{submitForbid}}" class="btn mt110 {{code ? '' : 'disabled'}}" disabled="{{!code}}" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>{{submitContent}}</button>
+  </view>
+  <light-dialog id="dialog"></light-dialog>
+</form>

@@ -1,0 +1,19 @@
+<view>
+  <view class="wrap">
+    <text class="ft32 bold txt-gray title">施工类型</text>
+    <view>
+      <view class="cos-item" wx:for="{{cons}}" :key="{{index}}" wx:for-item="con" wx:for-index="idx1">
+        <view class="cos-type va-mid ft32">{{con.name}}</view>
+        <view class="cos-class va-mid txt-dark">
+          <view class="tl" wx:for="{{con.attrs}}" data-cidx="{{idx1}}" data-aidx="{{idx2}}" catchtap='tapItem' wx:for-item="attr" wx:for-index="idx2">
+            <image class="va-mid" src="/images/order-completed.png" wx:if="{{attr.selected}}"></image>
+            <image class="va-mid" src="/images/order-complete.png" wx:else></image>
+            <text class="va-mid">{{attr.attr_val}}</text>
+          </view>
+        </view>
+      </view> 
+    </view>
+    <view style="height:50rpx"></view>
+    <button plain class="next-btn" catchtap='toNext'>下一步</button>
+  </view>
+</view>

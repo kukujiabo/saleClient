@@ -1,0 +1,105 @@
+<view class="consume-details-cont">
+    <wave id="wave"></wave>
+    <view wx:if="{{consumeDetail}}" class='consume-order card-box'>
+        <view>
+            <text class='w160'>商店名称：</text>
+            <text class='gray-3 over-elips'>{{consumeDetail.subject}}</text>
+        </view>
+        <view>
+            <text class='w160'>订单编号：</text>
+            <text class='gray-3'>{{consumeDetail.bill_no}}</text>
+        </view>
+
+        <view>
+            <text class='w160'>下单时间：</text>
+            <text class='gray-3'>{{consumeDetail.do_time}}</text>
+        </view>
+        <view class="barcode-wrap">
+            <image class="barcode" src="{{consumeDetail.barcode}}"></image>
+        </view>
+    </view>
+    <!-- <view class='h20'></view> 
+    <!-- <view class='consume-detalis'> -->
+    <!-- <view>
+            <text class='w140'>商户名称：</text> {{consumeDetail.subject}} </view>
+        <view> -->
+    <!-- <text class='w140'>订单金额：</text> {{consumeDetail.total}}元 </view> -->
+    <!-- <view>
+            <text class='w140' decode="{{true}}">收&nbsp;货&nbsp;人：</text>
+            <text class='gray-3'>{{consumeDetail.personal}} </text>
+        </view> -->
+    <!-- <view>
+            <text class='w140'>收货地址：</text>
+            <text class='gray-3'> {{consumeDetail.province}} {{consumeDetail.city}} {{consumeDetail.area}}</text>
+        </view> -->
+    <!-- <view>
+            <text class='w140'>配送方式：</text>
+            <text class='gray-3'>{{consumeDetail.discribution_mode}}</text> 
+        </view> -->
+    <!-- </view> -->
+    <block class="card-box" wx:if='{{consumeDetail}}' wx:for='{{consumeDetail.goods}}' wx:for-item='goodsList'>
+        <view class='consume-goods'>
+            <!-- <view class='img'>
+                <image src='{{goodsList.product_pic_address}}' />
+            </view> -->
+            <view class='txt'>
+                <view class='txt-t'>
+                    <text class="over-elips" style="width:65%">{{goodsList.goods_name}}</text>
+                    <text class="item-price" style="width:35%;text-align:right">¥ {{goodsList.goods_money}}</text>
+                </view>
+                <view class='txt-b'>
+                    <text>¥ {{goodsList.goods_price}}</text>
+                    <text>× {{goodsList.goods_num}}</text>
+                </view>
+            </view>
+        </view>
+        <view class='line ml30'></view>
+    </block>
+    <view class='expense'>
+        <!-- <view>
+            <text>商品总额：</text>
+             <text class='black'>¥{{consumeDetail.total}}</text> 
+        </view> -->
+        <!-- <view>
+            <view class='flex-1 align-c'>
+                优惠券：
+                <image src='/images/consume-icon.png' style='width:29rpx;height:28rpx;padding-right:10rpx;' />{{consumeDetail.coupon_name}}
+            </view>
+            <text>-¥{{consumeDetail.coupon_sum}}</text>
+        </view> -->
+        <!-- <view>
+            <text>运费：</text>
+            <text>¥{{consumeDetail.freight}}</text>
+        </view> -->
+        <block wx:for="{{consumeDetail.pay}}" wx:for-item="pay">
+            <view class="sumary">
+                <text>{{pay.pay_mode}}：</text>
+                <text>¥ {{pay.price}}</text>
+            </view>
+        </block>
+
+
+    </view>
+    <view wx:if="{{consumeDetail}}" class='expense-pay'>
+        <text>实付金额：</text>
+        <text class='org'>¥ {{consumeDetail.total}}</text>
+    </view>
+    <!-- <view class='invoice'>
+        <view>
+            <text>发票类型：</text>
+            <text class='gray-3'>{{consumeDetail.invoce_type}}</text>
+        </view>
+        <view>
+            <text>发票抬头：</text>
+            <text class='gray-3'>{{consumeDetail.invote_head}}</text>
+        </view>
+        <view>
+            <text>税号：</text>
+            <text class='gray-3'>{{consumeDetail.invote_duty}}</text>
+        </view>
+        <view>
+            <text>发票内容：</text>
+            <text class='gray-3'>{{consumeDetail.invote_content}}</text>
+        </view>
+    </view>  -->
+</view>

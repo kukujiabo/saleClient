@@ -1,0 +1,43 @@
+<view>
+  <view class="search-bar">
+    <input confirm-type='search' placeholder="请输入关键字(手机，收货人，商品名称，地址)搜索..." bindconfirm='search' bindinput='inputSearch'></input>
+  </view>
+  <view class="tabs clearfix">
+    <view wx:for="{{tabs}}" wx:key="{{index}}" data-idx="{{index}}" class="{{item.active}}" bindtap="chooseTab">{{item.tab_name}}</view>
+  </view>
+  <scroll-view scroll-y style="position:fixed;left:0;right:0;top:210rpx;bottom:0" wx:if="{{orders.length > 0}}">
+    <view class="order-list" >
+      <view class="order-item" wx:for="{{orders}}" wx:key="{{index}}">
+        <view bindtap="toDetail" data-id="{{item.id}}">
+          <view class="order-title clearfix">
+            <text class="fl bold">单号：{{item.sn}}</text>
+            <text class="fr bold">{{item.create_time}}</text>
+          </view>
+          <view class="order-title clearfix">
+            <text class="fl">金额：¥ {{item.order_money}}</text>
+            <text class="fr">状态：{{item.order_status_str}}</text>
+          </view>
+          <view class="goods-list">
+            <view class="goods-item clearfix" wx:for="{{item.order_goods}}" wx:for-item="good" wx:for-index="gindex" wx:key="{{gindex}}">
+              <image src="{{good.goods_picture}}" class="fl"></image>
+              <view class="fl goods-info">
+                <text class="over-elips">{{good.goods_name}}</text>
+                <text class="over-elips">{{good.sku_name}} * {{good.num}} </text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="operation-line">
+          <button class="trans-order" plain wx:if="{{item.trans == 1}}" data-order_id="{{item.id}}" size="mini" data-order_id="{{item.id}}" bindtap='mapTrans'>查看配送</button>
+          <button class="receive" plain wx:if="{{item.order_status == 1}}" size="mini" data-sn="{{item.sn}}" bindtap='cancelOrder'>取消订单</button>
+          <button class="again" size="mini" plain data-order_id="{{item.id}}" bindtap='rebuyOrder'>再次购买</button>
+          <button class="remove-order" plain wx:if="{{item.order_status == 0}}" size="mini" data-order_id="{{item.id}}" bindtap='removeOrder'>删除订单</button>
+          <button class="receive" plain wx:if="{{item.order_status == 3}}" size="mini" data-order_id="{{item.id}}" bindtap='confirmReceived'>确认收货</button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:else>
+    <view class="empty-order">暂无订单～</view>
+  </view>
+</view>

@@ -1,0 +1,226 @@
+.first-class {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 120rpx;
+  padding: 0 28rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+}
+
+.menu-item {
+  padding: 0;
+  display: inline-block;
+  margin: 2rpx 0;
+  width: 164rpx;
+  color: #595a5e;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.menu-line .active {
+  background: #116fea;
+  border-radius: 8rpx;
+  color: #fff;
+}
+
+.main-container {
+  position: fixed;
+  top: 250rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.second-class {
+  position: fixed;
+  left: 0;
+  top: 250rpx;
+  bottom: 0;
+  width: 160rpx;
+}
+
+.second-class scroll-view {
+  background: #f5f7fd;
+}
+
+.sc-me {
+  padding: 16rpx 0;
+  color: #595a5e;
+}
+
+.sc-me text {
+  padding: 0 20rpx;
+  display: block;
+}
+
+.sc-me.active text {
+  border-left: 3px solid #116fea;
+}
+
+.sc-wrapper {
+  padding: 30rpx 0;
+}
+
+.sc-wrapper .active {
+  color: #116fea;
+  font-weight: 600;
+}
+
+.second-class scroll-view {
+  padding-bottom: 32rpx;
+}
+
+.goods {
+  width: 590rpx;
+  position: fixed;
+  left: 160rpx;
+  right: 0;
+  top: 250rpx;
+  bottom: 0;
+}
+
+.selector {
+  padding: 0 34rpx;
+}
+
+.select-picker {
+  width: 100%; 
+  bottom: 0;
+  top: 100rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #dfdfdf;
+}
+
+.selector view {
+  width: 206rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  display: inline-block;
+  background: #f6faff;
+  border-radius: 4rpx;
+  border: 1rpx solid #f0f3f7;
+  padding: 0 20rpx;
+  color: #8991A3;
+}
+
+.selector image {
+  width: 40rpx;
+  height: 25rpx;
+  margin-top: 20rpx;
+}
+
+.select-picker view {
+  background: #fff;
+}
+
+.select-picker picker-view-column {
+  background: #fff;
+  opacity: 0.8
+}
+
+.selector-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.selector-operation {
+  height: 102rpx;
+  line-height: 102rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #f0f5fd;
+  opacity: 0.9;
+  border-top: 1rpx solid #dfdfdf;
+}
+
+.selector-operation {
+  padding: 0 24rpx;
+}
+
+.class-goods {
+  padding: 34rpx 34rpx 0 34rpx;
+  position: fixed;
+  top: 314rpx;
+  left: 160rpx;
+  right: 0;
+  bottom: 0;
+}
+
+
+.rush-item {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border: 1rpx solid #e3e5e9;
+  border-radius: 8rpx;
+}
+
+.rush-item image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.rush-logo {
+  display: inline-block;
+  width: 150rpx;
+  border: 0;
+}
+
+.rush-info {
+  display: inline-block;
+  width: 300rpx;
+  border: 0;
+  height: 160rpx;
+  padding-left: 28rpx
+}
+
+.rush-info text {
+  display: inline-block;
+}
+
+.rush-origin-price {
+  height: 60rpx;
+  line-height: 60rpx;
+  vertical-align: bottom;
+}
+
+.rush-btn {
+  border: 0 !important;
+  border-radius: 60rpx;
+  width: 135rpx;
+  height: 49rpx;
+  line-height: 49rpx !important;
+  background: #116fea !important;
+  color: #fff !important;
+}
+
+.cart-flow {
+  position: fixed;
+  left: 26rpx;
+  bottom: 80rpx;
+}
+
+.cart-flow image {
+  height: 120rpx;
+  width: 120rpx;
+}
+
+.cart-flow text {
+  width: 48rpx;
+  height: 48rpx;
+  text-align: center;
+  line-height: 48rpx;
+  color: #fff;
+  background: #f00;
+  border-radius: 30rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}

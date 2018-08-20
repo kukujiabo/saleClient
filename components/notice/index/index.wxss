@@ -1,0 +1,73 @@
+/* components/operationNotice/index/indexNotice.wxss */
+@import '../../components.wxss';
+@import '../operation.wxss';
+
+.target_1 {
+  width: 100rpx;
+  position: absolute;
+  right: 36rpx;
+  top: 70rpx;
+  height: 100rpx;
+}
+
+.pointer {
+  position: absolute;
+  z-index: 100000;
+  width: 76rpx;
+  height: 76rpx;
+  top: 170rpx;
+  right: 130rpx;
+}
+
+.dialog-box {
+  position: absolute;
+  top: 25%;
+  width: 60%;
+  border: 1px solid #fff;
+  padding: 42rpx 0;
+  border-radius: 8px;
+  left: 20%;
+  color: #fff;
+}
+
+.confirm {
+  margin: auto;
+  padding-top: 24px;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.info {
+  margin: auto;
+  padding: 0 20rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.show {
+  animation: show 1s ease-in-out;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.show-half {
+  animation: showhalf 0.5s ease;
+}
+
+@keyframes showhalf {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}

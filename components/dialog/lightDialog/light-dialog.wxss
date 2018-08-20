@@ -1,0 +1,100 @@
+/* components/dialog/warning/warning.wxss */
+@import '../../components.wxss';
+@import '../dialog.wxss';
+
+
+/**
+ * 提醒样式
+ */
+.warning .dialog-box {
+  border: 1px solid #FFCC33;
+}
+.warning .dialog-header {
+  background: #FFCC33;  
+  color: #fff;
+}
+.warning .dialog-box .dialog-content {
+  background: #fff;
+  color: #666;
+}
+.warning .dialog-box .dialog-footer .confirm-tap {
+  background: #FFCC33 !important;
+  color: #fff !important;
+}
+.warning .dialog-box .dialog-footer .confirm {
+  background: #fff;
+  color: #FFCC33;
+  border:1rpx solid #FFCC33;
+}
+
+/**
+ * 默认样式
+ */
+.default .dialog-box {
+  border: 1px solid #aaa;
+}
+.default .dialog-header {
+  background: #aaa;  
+  color: #fff;
+}
+.default .dialog-box .dialog-content {
+  background: #fff;
+  color: #666;
+}
+.default .dialog-box .dialog-footer .confirm-tap {
+  background: #aaa !important;
+  color: #fff !important;
+}
+.default .dialog-box .dialog-footer .confirm {
+  background: #fff;
+  color: #aaa;
+  border:1rpx solid #aaa;
+}
+
+/**
+ * 常规样式
+ */
+.primary .dialog-box {
+  border: 1px solid #33ccff;
+}
+.primary .dialog-header {
+  background: #33ccff;  
+  color: #fff;
+}
+.primary .dialog-box .dialog-content {
+  background: #fff;
+  color: #666;
+}
+.primary .dialog-box .dialog-footer .confirm-tap {
+  background: #33ccff !important;
+  color: #fff !important;
+}
+.primary .dialog-box .dialog-footer .confirm {
+  background: #fff;
+  color: #33ccff;
+  border:1rpx solid #33ccff;
+}
+
+/**
+ * 主题样式
+ */
+.theme .dialog-box {
+  border: 1px solid #d81e06;
+}
+.theme .dialog-header {
+  background: #d81e06;  
+  color: #fff;
+}
+.theme .dialog-box .dialog-content {
+  background: #fff;
+  color: #666;
+}
+.theme .dialog-box .dialog-footer .confirm-tap {
+  background: #d81e06 !important;
+  color: #fff !important;
+}
+.theme .dialog-box .dialog-footer .confirm {
+  background: #fff;
+  color: #d81e06;
+  border:1rpx solid #d81e06;
+}

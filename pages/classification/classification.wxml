@@ -1,0 +1,110 @@
+<view>
+
+  <!-- 搜索框 -->
+
+  <view>
+
+    <search id="search" searchType="1"></search>
+
+  </view>
+
+  <!-- 购物车 -->
+
+  <goods-standard id="goods_standard" bindcartcountchange="cartCountListener" bindclosestandard="closeStandard" attrWrapHeight="45"></goods-standard>
+
+  <!-- -->
+
+  <!-- 一级分类 -->
+
+  <view class='first-class'>
+
+    <scroll-view scroll-x style="width:694rpx;">
+      <view class="menu-line" style="width:{{menuWidth}}rpx">
+        <view class="menu-item tc {{item.active ? 'active' : ''}} bold" wx:for="{{menus}}" wx:key="{{index}}" data-idx="{{index}}" catchtap='switchFirstClass'>
+          <text>{{item.category_name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+
+  <view class="main-container">
+
+    <!-- 二级分类 -->
+
+    <view class="second-class">
+      <scroll-view scroll-y style="height:500rpx;">
+        <view class="sc-wrapper">
+          <view class="sc-me tl {{item.active ? 'active' : ''}}" wx:for="{{subCategories}}" wx:key="{{index}}" data-idx="{{index}}" catchtap='switchSecondClass'>
+            <text>{{item.category_name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="goods">
+
+      <!-- 选择器 -->
+
+      <view class="selector clearfix">
+        <view class="fl" data-idx="1" tapmode="hover" catchtap='showSelector'>
+          <text class="fl">{{selectedSignature.signature}}</text>
+          <image class="fr" src="/images/open.png"></image>
+        </view>
+        <view class="fr" data-idx="2" tapmode="hover" catchtap='showSelector'>
+          <text class="fl">{{selectedBrand.brand_name}}</text>
+          <image class="fr" src="/images/open.png"></image>
+        </view>
+      </view>
+
+      <!-- 分类商品 -->
+
+      <view class="class-goods">
+        <scroll-view scroll-y style="height:100%;">
+          <view class="rush-item clearfix" wx:for="{{goods}}" wx:key="{{index}}" data-id="{{item.goods_id}}" catchtap='toGoodDetail'>
+            <view class="rush-logo va-mid">
+              <image src="{{item.thumbnail}}"></image>
+            </view>
+            <view class="rush-info va-mid">
+              <view>
+                <text class="bold ft28 over-elips" style="width:220rpx">{{item.goods_name}}</text>
+              </view>
+              <view class="rush-origin-price">
+                <text class="ft22 line-through txt-light">原价：¥ {{item.price}}</text>
+              </view>
+              <view>
+                <view class="fl">
+                  <text class="txt-rd ft24">¥ </text>
+                  <text class="txt-rd ft34">{{item.min_money}}</text>
+                </view>
+                <view class="fr">
+                  <button plain size='mini' data-id="{{item.goods_id}}" catchtap="showStandard" data-idx="{{index}}" class="rush-btn bold ft22">选规格</button>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+
+    </view>
+
+    <view class="selector-wrapper" wx:if="{{showPicker}}">
+      <view class="selector-operation bold">
+        <view class="fl ft34" tapmode="hover" catchtap='cancelSelector'>取消</view>
+        <view class="fr ft34" tapmode="hover" catchtap='finishSelector'>完成</view>
+      </view>
+      <picker-view indicator-style="height: 50px;" class="select-picker" value="{{pickerIndex}}" bindchange="pickerChange">
+        <picker-view-column>
+          <view class="tc" wx:for="{{pickerItems}}" style="line-height: 50px">{{item.name}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+
+  </view>
+
+  <view class="cart-flow" catchtap='toCart'>
+    <image src="/images/cart-flow.png"></image>
+    <text wx:if="{{cartCnt}}">{{cartCnt}}</text>
+  </view>
+
+</view>

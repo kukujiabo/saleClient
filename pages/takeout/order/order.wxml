@@ -1,0 +1,191 @@
+<view class="order-cont">
+  <dialog id="dialog"></dialog>
+  <wave id="wave"></wave>
+  <!-- tab -->
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待付款</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待收货</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">已完成</view>
+    <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">退款/售后</view>
+  </view>
+  <view class='swiper-cont'>
+    <view class='h20'></view>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+      <!-- 全部 start -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}};">
+          <block wx:for="{{orderItem}}" wx:for-index="idx">
+            <view class='orderItem' bindtap='detailTap' data-idx="{{idx}}" data-id="{{item.order_id}}" data-sn="{{item.order_sn}}">
+              <view class='img'>
+                <image src='{{item.thumbnail}}' style='width:100%;height:100%;' />
+              </view>
+              <view class='txt'>
+                <view class='flex-2 w570' style="padding-left:20rpx">
+                  <text class='name'>{{item.shop_name}}</text>
+                  <text class='state' wx:if="{{item.order_status == 1}}">待付款</text>
+                  <text class='state' wx:if="{{item.order_status == 2 && item.shipping_status < 2}}">已接单</text>
+                  <text class='state' wx:if="{{item.order_status == 2 && item.shipping_status == 2}}">配送中</text>
+                  <text class='state' wx:if="{{item.order_status == 3}}">已完成</text>
+                  <text class='state' wx:if="{{item.order_status == -1}}">已取消</text>
+                </view>
+                <view class='flex-2 w570 time' style="padding-left:20rpx">下单时间：{{item.create_time}}</view>
+                <view class='flex-2 w570' style="padding-left:20rpx">
+                  <text class='total'>总价：¥{{item.total}}</text>
+                  <view class='flex-1' wx:if="{{item.order_status == 1}}">
+                    <button catchtap="toPay" data-idx="{{idx}}" data-sn="{{item.bill_no}}" data-id="{{item.order_id}}">付款</button>
+                  </view>
+                  <!-- <view class='flex-1' wx:if="{{item.order_status == 2 && item.shipping_status == 2}}">
+                    <button catchtap="receipted" data-idx="{{idx}}" data-sn="{{item.bill_no}}" data-id="{{item.order_id}}">签收</button>
+                  </view> -->
+                    <!-- <button>评价</button> -->
+                </view>
+              </view>
+            </view>
+          </block>
+          <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+          <view class='norecord mt300' wx:if="{{!orderItem}}">
+            <image src='/images/norecord.png' style='width:128rpx;height:128rpx;'></image>
+            <text>暂无订单</text>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 全部 end -->
+
+      <!-- 待付款 start -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}};">
+          <block wx:for="{{orderItem}}" wx:for-index="idx">
+            <view class='orderItem' bindtap='detailTap' data-idx="{{idx}}" data-id="{{item.order_id}}">
+              <view class='img'>
+                <image src='{{item.thumbnail}}' mode='widthFix' style='width:100%' />
+              </view>
+              <view class='txt'>
+                <view class='flex-2 w570'  style="padding-left:20rpx">
+                  <text class='name'>{{item.shop_name}}</text>
+                  <text class='state'>待付款</text>
+                </view>
+                <view class='flex-2 w570 time'  style="padding-left:20rpx">下单时间：{{item.create_time}}</view>
+                <view class='flex-2 w570'  style="padding-left:20rpx">
+                  <text class='total'>总价：¥{{item.total}}</text>
+                  <view class='flex-1'>
+                    <button catchtap="toPay" data-idx="{{idx}}" data-sn="{{item.bill_no}}" data-id="{{item.order_id}}">付款</button>
+                    <!-- <button>评价</button> -->
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+          <view class='norecord mt300' wx:if="{{!orderItem}}">
+            <image src='/images/norecord.png' style='width:128rpx;height:128rpx;'></image>
+            <text>暂无数据</text>
+          </view>
+
+        </scroll-view>
+      </swiper-item>
+      <!-- 待付款 end  -->
+
+      <!-- 待使用 start  -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}};">
+          <block wx:for="{{orderItem}}" wx:for-index="idx">
+            <view class='orderItem' bindtap='detailTap' data-idx="{{idx}}" data-id="{{item.order_id}}">
+              <view class='img'>
+                <image src='{{item.thumbnail}}' mode='widthFix' style='width:100%' />
+              </view>
+              <view class='txt'>
+                <view class='flex-2 w590'>
+                  <text class='name'>{{item.shop_name}}</text>
+                  <text class='state' wx:if="{{item.order_status == 2 && item.shipping_status < 2}}">已接单</text>
+                  <text class='state' wx:if="{{item.order_status == 2 && item.shipping_status == 2}}">配送中</text>
+                </view>
+                <view class='flex-2 w570 time' style="padding-left:20rpx">下单时间：{{item.create_time}}</view>
+                <view class='flex-2 w570' style="padding-left:20rpx">
+                  <text class='total'>总价：¥{{item.total}}</text>
+                  <!-- <view class='flex-1'>
+                    <button wx:if="{{item.order_status == 2 && item.shipping_status == 2}}" catchtap="receipted" data-idx="{{idx}}" data-sn="{{item.bill_no}}" data-id="{{item.order_id}}">签收</button>
+                  </view> -->
+                    <!-- <button>评价</button> -->
+                </view>
+              </view>
+            </view>
+          </block>
+          <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+          <view class='norecord mt300' wx:if="{{!orderItem}}">
+            <image src='/images/norecord.png' style='width:128rpx;height:128rpx;'></image>
+            <text>暂无数据</text>
+          </view>
+
+        </scroll-view>
+      </swiper-item>
+      <!-- 待使用 end  -->
+
+      <!-- 已完成 start  -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}};">
+          <block wx:for="{{orderItem}}" wx:for-index="idx">
+            <view class='orderItem' bindtap='detailTap' data-idx="{{idx}}" data-id="{{item.order_id}}">
+              <view class='img'>
+                <image src='{{item.thumbnail}}' mode='widthFix' style='width:100%' />
+              </view>
+              <view class='txt'>
+                <view class='flex-2 w590'>
+                  <text class='name'>{{item.shop_name}}</text>
+                  <text class='state'>已完成</text>
+                </view>
+                <view class='flex-2 w590 time'>下单时间：{{item.create_time}}</view>
+                <view class='flex-2 w590'>
+                  <text class='total'>总价：¥{{item.total}}</text>
+                  <view class='flex-1'>
+                    <!-- <button>评价</button> -->
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+          <view class='norecord mt300' wx:if="{{!orderItem}}">
+            <image src='/images/norecord.png' style='width:128rpx;height:128rpx;'></image>
+            <text>暂无数据</text>
+          </view>
+
+        </scroll-view>
+      </swiper-item>
+      <!-- 已完成 end  -->
+
+      <!-- 退款/售后 start  -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}};">
+          <block wx:for="{{orderItem}}" wx:for-index="idx">
+            <view class='orderItem' bindtap='detailTap' data-idx="{{idx}}" data-id="{{item.order_id}}">
+              <view class='img'>
+                <image src='{{item.thumbnail}}' mode='widthFix' style='width:100%' />
+              </view>
+              <view class='txt'>
+                <view class='flex-2 w570'  style="padding-left:20rpx">
+                  <text class='name'>{{item.shop_name}}</text>
+                  <text class='state'>已取消</text>
+                </view>
+                <view class='flex-2 w570 time'  style="padding-left:20rpx">下单时间：{{item.create_time}}</view>
+                <view class='flex-2 w570'  style="padding-left:20rpx">
+                  <text class='total'>总价：¥{{item.total}}</text>
+                  <view class='flex-1'>
+                    <!-- <button>评价</button> -->
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+          <view class='norecord mt300' wx:if="{{!orderItem}}">
+            <image src='/images/norecord.png' style='width:128rpx;height:128rpx;'></image>
+            <text>暂无数据</text>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 退款/售后 end  -->
+    </swiper>
+  </view>
+
+</view>

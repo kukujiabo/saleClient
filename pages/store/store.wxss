@@ -1,0 +1,203 @@
+page {
+  background: #f0f0f0;
+}
+
+.banner {
+  vertical-align: top;
+  width: 750rpx;
+  height: 335rpx;
+  background: #ddd;
+}
+
+.addr-select-warpper {
+  padding: 0 30rpx;
+}
+
+.suspended-icon {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  z-index: 3;
+  display: flex;
+  padding: 20rpx 20rpx 40rpx 40rpx;
+}
+
+.suspended-icon button {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  display: inline-flex;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  padding: 0;
+  align-items: center;
+}
+
+.suspended-icon button image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 auto;
+}
+
+.tab-bar {
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.tab-bar view {
+  width: 50%;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  border-right: 1px solid #ddd;
+  line-height: 36rpx;
+  height: 36rpx;
+  box-sizing: border-box;
+}
+
+.tab-bar view:last-child {
+  border-right: none;
+}
+
+.tab-bar .active {
+  color: #000;
+}
+
+.tab-cont {
+}
+
+.tab-cont .item {
+  display: none;
+}
+
+.tab-cont .item.active {
+  display: block;
+}
+
+.addr-select {
+  background: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #f1f1f1;
+  z-index: 9;
+  width: 100%;
+}
+
+.addr-select text {
+  font-size: 32rpx;
+  text-align: right;
+  color: #333;
+  float: right;
+  display: block;
+}
+
+.store-cont {
+  font-size: 28rpx;
+}
+
+.store-item {
+  display: flex;
+  height: 420rpx;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  margin: 0 30rpx 30rpx;
+  position: relative;
+}
+
+.store-img {
+  width: 100%;
+  height: 340rpx;
+  overflow: hidden;
+  display: block;
+  left: 0;
+  top: 0;
+  border-radius: 5px 5px 0 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.store-img image {
+  margin: 0 auto;
+  vertical-align: top;
+}
+
+.store-txt {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 340rpx;
+  position: absolute;
+  z-index: 2;
+}
+
+.txt-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  height: 340rpx;
+}
+
+.shopname {
+  font-size: 38rpx;
+  padding: 110rpx 0 50rpx;
+  font-weight: 300;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+.distance {
+  font-weight: 200;
+  font-size: 24rpx;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10rpx 20rpx;
+}
+
+.addr {
+  clear: both;
+  width: 100%;
+  padding-top: 340rpx;
+  align-items: center;
+  display: flex;
+  color: #999;
+  font-size: 24rpx;
+  justify-content: space-between;
+  line-height: 60rpx;
+}
+
+.addr .w500 {
+  display: inline-flex;
+  align-items: center;
+  width: 345rpx;
+}
+
+.addr .addrTxt {
+  width: 500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+}
+
+.takeoutBtn {
+  width: 300rpx;
+  text-align: right;
+  padding-right: 10rpx;
+  box-sizing: border-box;
+  color: #63c966;
+  font-size: 30rpx;
+}
+
+.map-icon, .map-icon image {
+  width: 36rpx;
+  height: 36rpx;
+  padding-right: 10rpx;
+  display: block;
+}

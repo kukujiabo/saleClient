@@ -1,0 +1,27 @@
+<view class="wrap">
+  <map id="myMap" show-location longitude="{{longitude}}" latitude="{{latitude}}" />
+  <view class="driver">
+    <view class="tc">
+      <text class="ft34 bold">配送详情</text>
+    </view>
+    <view class="ft28 txt-gray bold tc">
+      <text>配送地址：{{orderAddress.address}}</text>
+    </view>
+    <view class="user-info clearfix">
+      <view class="user va-mid">
+        <image src="/images/driver.png"></image>
+      </view>
+      <view class="va-mid">
+        <view>
+          <text class="ft28 bold">{{orderInfo.driver_name}}</text>
+        </view>
+        <view>
+          <text class="ft22 txt-gray">满意度：100%</text>
+        </view>
+      </view>
+      <view class="va-mid make-call tr">
+        <image src="/images/call.png" class="va-mid" catchtap='makeCall'></image>
+      </view>
+    </view>
+  </view>
+</view> 

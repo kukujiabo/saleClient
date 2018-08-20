@@ -1,0 +1,14 @@
+.qrcode-wrapper {
+  padding: 120rpx 0;
+}
+.qrcode-wrapper image {
+  width: 400rpx;
+  height: 400rpx;
+  box-shadow: 0 0 36rpx #e7e7e7;
+}
+.save {
+  width: 400rpx;
+  margin: 20rpx 0;
+  background: #d81e06;
+  color: #fff;
+}

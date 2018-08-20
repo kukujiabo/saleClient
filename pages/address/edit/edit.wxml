@@ -1,0 +1,59 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="add-addr mt40">
+        <view class='add-addr-list'>
+            <text>收货人</text>
+            <input placeholder-class='placeholder-gray_2' name='name' placeholder='请输入姓名' value='{{name}}' />
+        </view>
+        <view class='add-addr-list'>
+            <text>手机号</text>
+            <input placeholder-class='' placeholder='请输入手机号' name='phone' value='{{phone}}' maxlength='11' type='number' />
+        </view>
+        <view class='add-addr-list'>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class='addr-picker'>
+                <text>收货地址</text>
+                <view  bindtouchstart="open" class="over-elips" style='width:460rpx;'>{{province}}---{{city}}---{{county}}
+                </view> 
+                <input style="display:none" type="hidden" name="province" value="{{provinceId}}"/>
+                <input style="display:none" type="hidden" name="city"  value="{{cityId}}"/>
+                <input style="display:none" type="hidden" name="area"  value="{{countyId}}"/>
+            </picker>
+            <image hover-class="img-hover" bindtouchstart='chooseLocation' class="location" src="/images/choose-location.png"></image>
+        </view>
+        <view class='add-addr-list'>
+            <text>详细地址</text>
+            <input placeholder-class='' placeholder='请输入详细地址' name="addrDetail"
+             value='{{in_detail}}' />
+        </view>
+        <view class='add-addr-list'>
+            <text>默认地址</text>
+            <radio-group class="radio-group" name="default_address">
+                 <label class="radio">
+                    <radio checked="{{is_default == true?true:false}}" value="yes" />是
+                </label> 
+                 <label class="radio ml110">
+                    <radio checked="{{is_default == false?true:false}}" value="no" />否
+                </label> 
+            </radio-group>
+        </view>
+        <button class='btn mt80' hover-class="btn-hover" formType="submit">保 存</button>
+    </view>
+</form>
+<!--省市区三级联动  -->
+<view class='citymask' wx:if="{{condition}}" bindtap='tapCitymask'></view>
+<view wx:if="{{condition}}" class="citypicker">
+    <picker-view indicator-style="height:40px;" style="" value="{{value}}" bindchange="bindChange" class="pickerbody citybody">
+        <view class="pickerheader cityheader">
+            <view bindtap="open" class="city-cancel">取消</view>
+            <view bindtap="open" data-name="2" class="city-true">确定</view>
+        </view>
+        <picker-view-column>
+            <view wx:for="{{provinces}}" wx:key="item" style="line-height:40px;height:40px;font-size:28rpx;text-align:center ">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{citys}}" wx:key="item" style="line-height: 40px;height:40px;font-size:28rpx;text-align:center">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{countys}}" wx:key="item" style="line-height: 40px;height:40px;font-size:28rpx;text-align:center">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>

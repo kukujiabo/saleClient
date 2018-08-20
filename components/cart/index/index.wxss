@@ -1,0 +1,186 @@
+.shopscart {
+  display: flex;
+  position: absolute;
+  right: 15rpx;
+  bottom: 69rpx;
+}
+
+.deleteCart {
+  font-size: 12px;
+  width: 30%;
+}
+
+.shopscart .shopscart-l {
+  display: flex;
+  align-items: center;
+}
+
+.shopscart .shopscart-l text {
+  width: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.shopscart image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.goods-container .goods .addCart, .goods .addCart {
+  /* position: absolute; */
+  right: 30rpx;
+  bottom: 69rpx;
+  width: 42rpx;
+  height: 42rpx;
+  /* background: #feb70f; */
+  border-radius: 50%;
+}
+
+.selectTap {
+  background: #6bf;
+  padding: 4rpx 20rpx;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 40rpx;
+}
+
+.goods-container .goods .addCart image, .goods .addCart image {
+  pointer-events: none;
+  /* position: absolute;
+	left: 25rpx;
+	top: 25rpx; *//* padding: 11rpx; */
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.cart-detail, .cart-detail .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cart-detail .mask {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cart-detail .list {
+  position: absolute;
+  left: 0;
+  bottom: 100rpx;
+  width: 100%;
+  background: #f7f7f7;
+  padding: 30rpx 0;
+}
+
+.cart-detail .list .item {
+  display: -webkit-flex;
+  color: #333;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  padding: 0rpx 40rpx;
+}
+
+.cart-detail .list .item .name {
+  /* -webkit-flex: 1; */
+  font-size: 28rpx;
+  width: 380rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cart-detail .list .item .total {
+  width: 85rpx;
+  text-align: right;
+  margin-right: 20rpx;
+}
+
+.cart-detail .list .item .reduce, .cart-detail .list .item .add {
+  font-size: 42rpx;
+  /* background: #feb70f; */
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.cart-detail .list .item .reduce image, .cart-detail .list .item .add image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.cart-detail .list .item .num {
+  width: 50rpx;
+  text-align: center;
+  margin: 0 5rpx;
+}
+
+.cart {
+  display: -webkit-flex;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #eee;
+}
+
+.cart .data {
+  -webkit-flex: 1;
+  /*border-top: 1rpx solid #e7e7e7;*/
+}
+
+.cart .data .icon {
+  position: absolute;
+  left: 40rpx;
+  top: -20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 10;
+  /* background: #feb70f; *//* background: #66bbff; */
+  border-radius: 50%;
+}
+
+.cart .data .icon image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.cart .data .icon .count {
+  position: absolute;
+  left: 70rpx;
+  top: -10rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 0 12rpx;
+  color: #fff;
+  background: #ff6100;
+  /* background: #f45044; */
+  border-radius: 20rpx;
+}
+
+.cart .data .total {
+  color: #f45044;
+  font-size: 36rpx;
+  line-height: 100rpx;
+  padding-left: 160rpx;
+}
+
+.cart button {
+  /* background: #66bbff; */
+  background: #6bf;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  width: 280rpx;
+  height: 100rpx;
+  font-size: 36rpx;
+}
+
+.cart button::after {
+  border: none;
+}

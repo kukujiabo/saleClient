@@ -1,0 +1,290 @@
+.user-info {
+  padding: 18rpx 0;
+
+}
+
+.headimg image {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 60rpx;
+}
+
+.user-name {
+  padding: 12rpx 0;
+}
+
+.acct-info {
+  border-top: 1rpx solid #f0f3f7;
+  height: 120rpx;
+}
+
+.acct-info {
+  padding-top: 10rpx;
+}
+
+.acct-info view {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.acct-info-item {
+  width: 50%;
+  display: inline-block;
+}
+
+.index-nav-1 {
+  display: flex;
+  width: 100%;
+  font-size: 28rpx;
+  color: #666;
+  background: #fff;
+  padding: 32rpx 0 20rpx 0;
+}
+
+.index-nav-1 navigator {
+  box-sizing: border-box;
+  display: flex;
+  width: 33.3333%;
+  justify-content: center;
+  text-align: center;
+}
+
+.index-nav-1 navigator:last-child {
+  border-right: none;
+}
+
+.index-nav-1 view text {
+  display: block;
+  font-size: 24rpx;
+  color: #333;
+  padding-bottom: 10rpx;
+  font-weight: 400;
+}
+
+.index-nav-1 view image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.nav-item image.icon {
+  padding: 0;
+}
+
+.card-bott {
+  font-size: 22rpx;
+  margin-top: 210rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-bott .cardNum {
+  font-size: 32rpx;
+}
+
+.swiper-nav {
+  height: 400rpx;
+  background: #fff;
+}
+
+.index-nav-2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 50rpx;
+}
+
+.index-nav-2 .item {
+  width: 25%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-top: 48rpx;
+  box-sizing: border-box;
+}
+
+.index-nav-2 .item view {
+  width: 100%;
+}
+
+.index-nav-2 .item image {
+  width: 48rpx;
+  height: 48rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.index-nav-2 .item text {
+  margin-top: 30rpx;
+  display: block;
+  font-size: 24rpx;
+  color: #333;
+  height: 30rpx;
+}
+
+.member-title {
+  background: #e1e1e1;
+  display: flex;
+  justify-content: center;
+  height: 80rpx;
+  align-items: center;
+}
+
+.member-title text {
+  font-size: 24rpx;
+  color: #f00;
+}
+
+.inform-cont {
+  background: #fff;
+  padding-top: 20rpx;
+}
+
+.index-news {
+  display: flex;
+  align-items: center;
+  height: 118rpx;
+  box-sizing: border-box;
+  margin: 0 30rpx;
+  border-bottom: 1px solid #f6f6f6;
+  padding-bottom: 12rpx;
+}
+
+.newsicon {
+  width: 48rpx;
+  height: 48rpx;
+  background: #fff;
+  padding-right: 32rpx;
+}
+
+.newsicon image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.newsname {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.newsname .time {
+  display: block;
+  color: #999;
+  font-size: 22rpx;
+  padding-top: 14rpx;
+}
+
+.news-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 28rpx;
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 32rpx;
+  color: #333;
+  background: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.news-title view {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.news-title view image {
+  margin-left: 32rpx;
+  vertical-align: middle;
+}
+
+.show {
+  animation: show 1s ease-in-out;
+}
+
+.user-nav {
+  padding: 0 24rpx;
+  background: #fff;
+}
+
+.user-nav .nav-item {
+  padding: 24rpx 12rpx;
+  color: #333;
+  font-weight: 400;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.user-nav .nav-item:last-child {
+  border-bottom: 0;
+}
+
+.nav-item image {
+  width:16rpx;
+  height:28rpx;
+  vertical-align: middle;
+  padding: 10rpx 0;
+}
+
+.all-order image {
+  width:16rpx;
+  height:28rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+  padding: 6rpx 0;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.show-half {
+  animation: showhalf 0.5s ease;
+}
+
+.index-nav {
+  padding: 0 24rpx;
+  color: #333;
+  background: #fff;
+}
+
+.index-nav view {
+
+}
+
+.img {
+  width: 60rpx;
+}
+
+@keyframes showhalf {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.order-num {
+  position: absolute;
+  right: -15rpx;
+  top: -15rpx;
+  width: 42rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  background: #f00;
+  color: #fff !important;
+  border-radius: 21rpx;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.manager-switch {
+  padding: 16rpx;
+}

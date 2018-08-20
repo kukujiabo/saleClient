@@ -1,0 +1,86 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="signIn-cont">
+    <view class="calendar-root">
+        <view class="calendar-navbar">
+             <view class="calendar-navbar-button" bindtap="goToday">今日</view>
+        <view class="calendar-navbar-button" bindtap="goLastMonth">{{"<"}}</view>  
+            <view class="calendar-navbar-date">{{date}}</view>
+             <view class="calendar-navbar-button" bindtap="goNextMonth">{{">"}}</view> 
+          <picker class="calendar-navbar-button" mode="date" start="1900-01-01" end="2100-01-01" bindchange="bindDateChange"> 
+            <view>跳转</view>
+        </picker>  
+        </view>
+        <view class="calendar-head">
+            <view wx:for="日一二三四五六" wx:key="*this">{{item}}</view>
+        </view>
+        <view class="calendar-body">
+            <view class="calendar-body-rows" wx:for="123456" wx:for-index="row" wx:key="*this">
+                <view class="calendar-body-cols" wx:for="1234567" wx:for-index="col" wx:key="*this">
+                    <view class="calendar-body-item" wx:if="{{arrIsShow[row * 7 + col]}}" data-day-index="{{row * 7 + col}}" bindtap="selectDay">
+                        <!-- 阳历 -->
+                        <view class="calendar-body-day">
+                            {{arrDays[row * 7 + col]}}
+                        </view>
+                        <!--农历  -->
+                        <view class="calendar-body-dayex">
+                            {{arrInfoExShow[row * 7 + col]}}
+                        </view>
+                        <!-- 签到图标 -->
+                        <block wx:for="{{signDay}}" wx:for-item="signDay_info" wx:if="{{(signDay_info == arrDays[row * 7 + col])}}">
+                            <image class='signIn-icon' src='/images/signIn-icon.png' />
+                        </block>
+                        <!-- 当天 -->
+                        <view class='today-icon' wx:if="{{arrDays[row * 7 + col] == today_day}}"></view>
+                        <view class='today-icon black' wx:elif="{{arrDays[row * 7 + col] == current_day}}"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="calendar-detail">
+              <view class="calendar-detail-day">{{detailData.curDay}}</view>
+              <view class="calendar-detail-info1">{{detailData.curInfo1}}</view>
+              <view class="calendar-detail-info2">{{detailData.curInfo2}}</view>
+        </view>    
+    </view>
+     <!-- <view class='signIn-success' wx:if="{{isSigned}}">
+        今天已签到
+        <text> +{{integral}} </text>积分！ 连续签到
+        <text>{{days}} </text>天
+    </view> -->
+    <view class='signIn-reminder'>
+  
+        <view class='reminder-l'>
+             {{rewards}}
+        </view>
+        <!-- <view class='reminder-r' > -->
+            <view class='signIn-btn finish' wx:if="{{isSigned}}" >已 签 到</view>
+            <view class='signIn-btn' wx:else  hover-class="btn-hover" bindtap='signBtn'>签 到</view>
+        <!-- </view> -->
+    </view> 
+    <!-- <view class='signIn-success' wx:if="{{isSigned}}">
+        今天已签到
+        <text> +{{integral}} </text>积分！ 连续签到
+        <text>{{days}} </text>天
+    </view>
+    <view class='signIn-reminder' wx:else >
+        <navigator>
+        <view class='reminder-l'>
+             {{rewards}}
+        </view>
+        </navigator>
+        <view class='reminder-r'>
+            <button class='signIn-btn' hover-class="btn-hover" bindtap='signBtn'>签 到</button>
+        </view>
+    </view> -->
+    <view class='signIn-rule'>
+        <view class='rule-tit'>
+            <view></view>
+            <text>签到积分规则</text>
+        </view>
+
+  <!-- 这一块是富文本 显示的内容区 -->
+<!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"/> -->
+     <template is="wxParse" data="{{wxParseData:page_configs.sign_rules.nodes}}"/>
+        <!-- {{page_configs.sign_rules}}  -->
+    </view>
+</view>

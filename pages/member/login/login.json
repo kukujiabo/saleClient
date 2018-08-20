@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "用户注册",
+    "usingComponents": {
+        "light-dialog": "/components/dialog/lightDialog/light-dialog",
+        "wave": "/components/loading/loading1/wave"
+    }
+}

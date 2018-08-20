@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "订单支付",
+    "usingComponents": {
+      "wave": "/components/loading/loading1/wave",
+      "dialog": "/components/dialog/lightDialog/light-dialog"
+    },
+    "navigationBarBackgroundColor": "#6bf"
+}

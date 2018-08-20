@@ -1,0 +1,38 @@
+.cover-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  opacity: 0.6;
+}
+.cover-white {
+  background: #fff;
+}
+.cover-black {
+  background: #fff;
+}
+
+.fade-out {
+  animation: fadeout 0.5s linear;
+  opacity: 0;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

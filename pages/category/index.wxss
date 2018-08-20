@@ -1,0 +1,107 @@
+/* pages/category/index.wxss */
+page {
+  background: #fff;
+}
+.fl {
+  float: left;
+}
+
+.first-category button {
+  border: 0 !important;
+  height: 62rpx;
+  line-height: 62rpx;
+  background: #fff;
+  font-size: 28rpx !important;
+  color: #aaa;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 50rpx;
+}
+.bar {
+  width: 180rpx;
+  background: #fff5ee;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0rpx;
+  overflow-y: scroll;
+  font-size: 28rpx;
+}
+.content {
+  width: 570rpx;
+  text-align: center;
+  left: 180rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.first-category-item {
+  display: inline-block;
+  margin: 0 10rpx;
+  color: #aaa;
+  font-size: 30rpx;
+}
+.category-item {
+  height: 85rpx;
+  line-height: 85rpx;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #fff;
+  font-size: 26rpx;
+}
+.sub-category {
+  width: 90%;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.sub-category image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid #bbb;
+}
+.sub-category text.good-name {
+  color: #333;
+  width: 240rpx;
+  display: block;
+  font-size: 28rpx;
+  padding: 12rpx;
+}
+.sub-category text.price {
+  display: block;
+  color: #ff0000;
+  font-size: 24rpx;
+  padding: 12rpx;
+  font-weight: 600;
+}
+.first-category {
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #d81e06;
+  padding: 0 18rpx;
+}
+.cl-wt {
+  color: #fff;
+}
+
+.third-category {
+  background: #f0f0f0;
+  padding: 16rpx;
+}
+.t-c-item {
+  padding: 6rpx;
+  margin: 5rpx;
+}
+.t-c-item text {
+  font-weight: 200;
+  font-size: 28rpx;
+}
+
+.sub-category image {
+
+}
+
+.sub-category text {
+  
+}

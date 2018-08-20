@@ -1,0 +1,129 @@
+page {
+  height: 100%;
+  background: #f0f3f7;
+}
+
+.coupon-list-cont {
+}
+
+.coupon-list {
+  width: 674rpx;
+  height: 192rpx;
+  margin: 36rpx 30rpx 0;
+  position: relative;
+}
+
+.coupon-bg {
+  position: absolute;
+  width: 674rpx;
+  height: 192rpx;
+  z-index: 1;
+}
+
+.coupon-cont {
+  position: absolute;
+  width: 674rpx;
+  height: 192rpx;
+  z-index: 2;
+  display: flex;
+}
+
+.coupon-l {
+  width: 200rpx;
+  height: 192rpx;
+  line-height: 192rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.coupon-l .postage {
+  font-size: 42rpx;
+}
+
+.coupon-l .money {
+  font-size: 72rpx;
+}
+
+.coupon-l .money text {
+  font-size: 24rpx;
+}
+
+.coupon-r {
+  margin-left: 30rpx;
+  display: flex;
+  flex-flow: column;
+}
+
+.coupon-r .name {
+  font-size: 32rpx;
+  color: #19af1e;
+  padding: 25rpx 0 30rpx 0;
+}
+
+.coupon-r .type {
+  font-size: 24rpx;
+  color: #000;
+}
+
+.coupon-r .dueTime {
+  font-size: 22rpx;
+  color: #999;
+  padding-top: 15rpx;
+  display: flex;
+  align-items: center;
+}
+
+.coupon-r .dueTime image {
+  width: 22rpx;
+  height: 22rpx;
+  padding-right: 10rpx;
+}
+
+.coupon-duetime .coupon-r .name {
+  color: #c5c5c5;
+}
+
+.coupon-duetime .coupon-r .type {
+  color: #a7a7a7;
+}
+
+.coupon-duetime .coupon-r .dueTime {
+  color: #d1d1d1;
+}
+
+.duetime-img {
+  position: absolute;
+  right: -30rpx;
+  top: 26rpx;
+  z-index: 3;
+}
+
+.duetime-img image {
+  width: 151rpx;
+  height: 95rpx;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+}
+
+.tab-itm {
+  display: flex;
+  flex-grow: 1;
+  flex-flow: column;
+  text-align: center;
+  color: #afafaf;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 30rpx;
+}
+
+.active {
+  color: #000;
+  font-weight: 800;
+  border-bottom: 2px solid #000;
+}

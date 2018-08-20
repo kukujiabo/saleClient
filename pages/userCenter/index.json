@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "会员中心",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "black",
+    "onReachBottomDistance":200,
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#f0f3f7",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+      "notice": "/components/notice/index/index",
+      "wave": "/components/loading/loading1/wave"
+    }
+}

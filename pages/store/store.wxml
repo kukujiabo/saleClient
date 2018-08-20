@@ -1,0 +1,93 @@
+<view class='store-cont'>
+    <wave id="wave"></wave>
+    <dialog id="dialog"></dialog>
+    <view class='addr-select' bindtap="open">
+      <view class="addr-select-warpper">
+        <input style="display:none" type="hidden" name="province" value="{{provinceId}}" />
+        <input style="display:none" type="hidden" name="city" value="{{cityId}}" />
+        <input style="display:none" type="hidden" name="area" value="{{countyId}}" />
+        <text>{{city}}</text>
+      </view>
+    </view>
+    <image class='banner' src='{{page_configs.store_banner}}' mode="widthFix"/>
+
+    <view class="tab-container">
+        <view class="tab-bar" bindtap="tabFun">
+            <!-- <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0" bindtap="recommendTap">推荐排序</view> -->
+            <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd02" data-id="0" bindtouchstart="rangeTap">距您最近</view>
+            <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd03" data-id="1" bindtouchstart="openCounty">
+                {{county}}
+            </view>
+        </view>
+
+        <view class="tab-cont">
+            <block wx:for="{{storeItem}}" wx:for-index='idx' >
+                <view class='store-item show-up' data-idx='{{idx}}'>
+                    <view class='suspended-icon' bindtap='makePhoneCall'>
+                        <button >
+                            <image src='/images/makephone.png' />
+                        </button>
+                    </view>
+                    <view class='store-img'>
+                         <image src='{{item.pic_address}}' mode = "widthFix" style = "width:100%;height:auto;min-height:340rpx; " /> 
+                    </view>
+                    <view class='store-txt'>
+                        <view class='txt-top' bindtap='detailTap' data-idx='{{idx}}'>
+                            <text class='shopname'>{{item.store_name}}</text>
+                            <text class='distance'>距您{{item.distance}}</text>
+                        </view>
+                    </view>
+                    <view class='addr' >
+                      <view class='w500' data-idx='{{idx}}' bindtap='openMap'>
+                        <view class='map-icon'>
+                          <image src='/images/location.png'/>
+                        </view>
+                        <view class='addrTxt'>{{item.address}}</view> 
+                      </view>
+                      <view 
+                        class='takeoutBtn' 
+                        data-idx='{{idx}}' 
+                        bindtap='takeoutTap' 
+                        wx:if = "{{item.is_outside_order == 1}}">点外卖</view>
+                    </view>
+                </view>
+            </block>
+            <view wx:if="{{nomore}}" class='nomore'>没有更多数据了</view>
+            <view class='norecord' wx:if="{{!storeItem}}">
+                <image src='/images/nostore.png' style='width:147rpx;height:128rpx;'></image>
+                <text>暂无附近门店</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!--省市三级联动  -->
+<view class='citymask' wx:if="{{condition}}" bindtouchstart='tapCitymask'></view>
+<view wx:if="{{condition}}" class="citypicker">
+    <picker-view indicator-style="height:40px;" style="" value="{{value}}" bindchange="bindChange" class="pickerbody citybody">
+        <view class="pickerheader cityheader">
+            <view bindtouchstart="open" class="city-cancel">取消</view>
+            <view bindtouchstart="open" data-name="2" class="city-true">确定</view>
+        </view>
+        <picker-view-column>
+            <view wx:for="{{provinces}}" wx:key="item" style="line-height:40px;height:40px;font-size:28rpx;text-align:center ">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{citys}}" wx:key="item" style="line-height: 40px;height:40px;font-size:28rpx;text-align:center">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>
+
+<!--区三级联动  -->
+<view class='citymask countymask' wx:if="{{conditionCounty}}" bindtouchstart='tapCountymask'></view>
+<view wx:if="{{conditionCounty}}" class="citypicker countypicker">
+    <picker-view indicator-style="height:40px;" style="" value="{{valueCounty}}" bindchange="bindChangeCounty" class="pickerbody citybody">
+        <view class="pickerheader cityheader">
+            <view bindtouchstart="openCounty" class="city-cancel">取消</view>
+            <view bindtouchstart="openCounty" data-name="2" class="city-true">确定</view>
+        </view>
+        <picker-view-column>
+            <view wx:for="{{countys}}" wx:key="item" style="line-height: 40px;height:40px;font-size:28rpx;text-align:center">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>

@@ -1,0 +1,74 @@
+<view>
+  <wave id="wave"></wave>
+  <view wx:if="{{!address}}" class="good-info address-info tc" style="  line-height:150rpx" bindtap='toAddressList'>
+    请选择地址
+  </view>
+  <view wx:else class="address-info good-info" bindtap='toAddressList'> 
+    <text class="over-elips bold">{{address.address}}</text>
+    <text class="ar over-elips">{{address.province_name}} - {{address.city_name}} - {{address.area_name}}</text>
+    <text class="con">{{address.consigner}} {{address.mobile}}</text>
+  </view>
+  <view class="good-info" bindtap="pickWorkspace">
+    <view wx:if="{{!workspace}}">
+      <text>选择工地（选填）</text>
+      <image class="fr" style="width:32rpx;height:32rpx;margin:8rpx 0" src="/images/arrow-right.png"></image>
+    </view>
+    <view wx:else>
+      <text>{{workspace.name}}</text>
+      <image class="fr" style="width:32rpx;height:32rpx;margin:8rpx 0" src="/images/arrow-right.png"></image>
+    </view>
+  </view>
+  <view class="clearfix good-info" wx:for="{{goods}}" wx:key="{{index}}" wx:for-item="good">
+    <view class="fl good-image" style="width:22%;">
+      <image src="{{good.goods_picture}}"></image>
+    </view>
+    <view class="fl" style="width:58%">
+      <view>
+        <text class="good-name bold">{{good.goods_name}}</text>
+      </view>
+      <view>
+        <text class="sku-name ft24">规格：{{good.sku_name}}</text>
+      </view>
+      <view>
+        <text class="sku-name">数量：{{good.num}}</text>
+      </view>
+    </view>
+    <view class="fl" style="width:20%" wx:if="{{good.price}}">
+      <text class="price" style="width:100%;display:inline-block;text-align:right">¥ {{invoice ? ( good.tax_off_price ? good.tax_off_price : good.price ) : good.price}}</text>
+    </view>
+  </view>
+  <view class="good-info" bindtap="pickCoupon">
+    <view>
+      <text>{{coupon.coupon_name ? ( coupon.coupon_name + '(-' + coupon.money + ')' ) : '选择优惠券'}}</text>
+      <image class="fr" style="width:32rpx;height:32rpx;margin:8rpx 0" src="/images/arrow-right.png"></image>
+    </view>
+  </view>
+  <view class="good-info">
+    <textarea placeholder='填写留言（100字以内！）' bindinput='inputRemark' style="width: 100%"></textarea>
+  </view>
+  <view class="good-info" wx:if="{{!provider}}">
+    <view>
+      <checkbox-group bindchange="checkInvoice">
+        <label class="checkbox" style="padding:0 15rpx;">
+          <checkbox value="{{invoice}}" checked="{{invoice}}"></checkbox> 索要发票
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="good-info">
+    <view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" style="padding:0 15rpx;" wx:for="{{payItems}}" wx:key="{{item.value}}">
+          <radio value="{{item.value}}" checked="{{item.checked}}"/> {{item.label}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view style="height:120rpx"></view>
+  <view class="bottom-line bold">
+    <view class="clearfix">
+      <text class="fl txt-black">¥ {{total_price}}</text>
+      <button size="mini" class ="fr" plain catchtap="confirmOrder">确认下单</button>
+    </view>
+  </view>
+</view>

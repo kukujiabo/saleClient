@@ -1,0 +1,17 @@
+{
+
+  "navigationBarBackgroundColor": "#fff",
+
+  "navigationBarTextStyle": "black",
+
+  "backgroundColor": "#ffffff",
+
+  "disableScroll": true,
+
+  "usingComponents": {
+
+    "search": "/components/search/search"
+
+  }
+  
+}

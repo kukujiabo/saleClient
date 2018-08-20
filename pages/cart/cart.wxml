@@ -1,0 +1,52 @@
+<view>
+  <view class="goods-list" wx:if="{{goods.length > 0 }}">
+    <!-- 
+    <view style="padding: 10rpx 0 18rpx 0">
+      <button plain class="clear-selected" bindtap="clearSelected">删除选中商品</button>
+    </view>
+    -->
+    <view wx:for="{{goods}}" wx:key="{{item.goods_id}}">
+      <view class="goods-item clearfix">
+        <view class="check-goods fl">
+          <checkbox size="mini" data-idx="{{index}}" bindtap="selectGood" checked="{{selectedGoods[index]}}"></checkbox>
+        </view>
+        <image src="{{item.goods_picture}}" class="fl"></image>
+        <view class="fl goods-info">
+          <text class="over-elips title ft28 bold">{{item.goods_name}}</text>
+          <text class="over-elips attribute ft24">{{item.sku_name}}</text>
+          <text class="over-elips price ft34">¥ {{item.price}}</text>
+        </view>
+        <view class="fr goods-number">
+          <view class="remove clearfix" style="text-align:right">
+            <image src="/images/remove.png" data-idx="{{index}}" bindtap="removeCartItem" ></image>
+          </view>
+          <view style="height:80rpx"></view>
+          <view class="edit-number clearfix tc">
+            <image src="/images/minus.png" class="minu-img" data-idx="{{index}}" bindtap="minusnum"></image>
+            <input value="{{item.num}}" data-index="{{index}}" bindinput='inputNum'></input>
+            <image src="/images/plus.png" class="plus-img" data-idx="{{index}}" data- bindtap="addnum"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="height:200rpx"></view>
+  </view>
+  <view class="empty" wx:else>
+    <image src="/images/embrass.png"></image>
+    <view>
+      <text>您的购物车没有商品！</text>
+    </view>
+    <view style="padding-top: 50rpx;">
+      <button class="go-pick bold" hover-class='theme-tap' bindtap='toIndex'>马上去挑选！</button>
+    </view>
+  </view>
+  <view class="confirm-cart-order" wx:if="{{goods.length > 0}}">
+    <view class="option-line clearfix">
+      <checkbox class="fl" plain bindtap='checkAll' checked="{{selectedAll}}"></checkbox>
+      <text class="fl ft28 txt-dark ">全选</text>
+      <text class="fl ft28" bindtap="clearSelected">删除</text>
+      <button size="mini" class="fr bold ft28" plain bindtap="toOrder">结算</button>
+      <text class="fr ft32">合计：¥ {{cart_total}}</text>
+    </view>
+  </view>
+</view>

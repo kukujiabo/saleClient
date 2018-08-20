@@ -1,0 +1,66 @@
+/* pages/brand/detail/detail.wxss */
+.view {
+  display:block;
+}
+.brand-background {
+  background: #d81e06;
+  padding: 36rpx;
+  display: block;
+  border-bottom: 1px solid #aaa;
+  color: #fff;
+}
+.lines {
+  float: left;
+  height: 120rpx;
+}
+.logo {
+  width: 120rpx;
+  height: 120rpx;
+  vertical-align: middle;
+}
+.lines text {
+  vertical-align: middle;
+  font-weight: 400;
+  font-size: 30rpx;
+}
+.goods-list {
+  padding: 20rpx;
+}
+
+.goods-item {
+  padding: 12rpx;
+  border: 1px solid #eee;
+  width: 44%;
+  float:left;
+  margin: 5rpx;
+}
+
+.goods-item image {
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.goods-info {
+  padding: 12rpx 0;
+  font-weight: 200;
+}
+
+.goods-brand-name {
+  font-size: 22rpx;
+  padding: 16rpx 0;
+}
+
+.goods-price {
+  font-size: 28rpx;
+  color: #ff0000;
+}
+
+.goods-sale {
+  font-size: 24rpx;
+  color: #999;
+}
+.brand-intro {
+  padding: 8rpx 0;
+  font-size: 24rpx;
+  font-weight: 200;
+}

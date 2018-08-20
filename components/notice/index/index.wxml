@@ -1,0 +1,17 @@
+<!--components/operationNotice/index/indexNotice.wxml-->
+<view class="fixed-wrapper {{fadeOut}}" onanimationend="aniEnd" hidden="{{hidden}}">
+  <view hover-stop-propagation="{{true}}" class="bg-cover show-half" catchtouchmove='stopPopEvent'></view>
+  <view class="operation-container">
+    <image class="show target_1" src="/images/kuang.png" onanimationend="aniend1"></image>
+    <image hidden="{{arrow}}" class="show pointer" src="/images/pointer.png" onanimationend="aniend2"></image>
+    <view class="show dialog-box" hidden="{{dialog}}">
+      <view class="info">
+        <view style="padding:8rpx 0;">点击进入支付二维码</view>
+        <view style="padding:8rpx 0;">出示二维码使用余额支付</view>
+      </view>
+      <view class="confirm">
+        <button size="mini" bindtouchstart="fadeOut">知道了!</button>
+      </view>
+    </view>
+  </view>
+</view>

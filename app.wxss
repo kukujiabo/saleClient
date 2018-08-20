@@ -1,0 +1,512 @@
+@import "/wxParse/wxParse.wxss";
+
+/**app.wxss**/
+
+page {
+  font-size: 28rpx;
+  color: #000;
+  background: #fff;
+}
+
+.clear {
+  clear: both;
+}
+
+.app-wrapper {
+  padding: 32rpx;
+}
+
+.cont {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  /* padding: 20rpx 0; */
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.flex-1 {
+  display: flex;
+}
+
+.align-c {
+  align-items: center;
+}
+
+.justify-c {
+  justify-content: center;
+}
+
+.justify-b {
+  justify-content: space-between;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+
+.flex-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.l {
+  float: left;
+}
+
+.r {
+  float: right;
+}
+
+/*picker 三级联动*/
+
+.citymask {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.countymask {
+  z-index: 10;
+}
+
+.citypicker {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  z-index: 3;
+}
+
+.countypicker {
+  z-index: 11;
+}
+
+.pickerbody, .citybody {
+  width: 100%;
+  height: 300px;
+  background: #fff;
+  position: fixed;
+  bottom: 0px;
+  box-shadow: 0 0 5px #999;
+}
+
+/*picker 头部*/
+
+.pickerheader, .cityheader {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 4;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.city-cancel {
+  float: left;
+  padding: 20rpx 60rpx;
+  color: #818181;
+  font-size: 36rpx;
+}
+
+.city-true {
+  float: right;
+  padding: 20rpx 60rpx;
+  color: #2fb42e;
+  font-size: 36rpx;
+}
+
+.section .picker {
+  background-color: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  border-top: 1px #d9d9d9 solid;
+  padding: 20rpx;
+}
+
+/**
+*自定义弹框
+*/
+
+/*button*/
+
+.openBtn {
+  width: 80%;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 40rpx 10%;
+  background: #000;
+  color: #fff;
+}
+
+.va-mid {
+  vertical-align: middle;
+}
+
+/*mask*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+/*content*/
+
+.drawer_box {
+  width: 70%;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 15%;
+  z-index: 1001;
+  background: #fafafa;
+  margin: -140rpx auto 0 auto;
+  border-radius: 3px;
+}
+
+.drawer_content {
+  padding: 40rpx 0rpx;
+  color: #999;
+  text-align: center;
+  height: 80rpx;
+  line-height: 40rpx;
+}
+
+.btn_ok {
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+  color: #3cc51f;
+}
+
+.btns {
+  display: flex;
+}
+
+.btns button {
+  width: 50%;
+  font-size: 36rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0;
+  text-align: center;
+  border-radius: 0;
+}
+
+.btns button.confirm {
+  color: #3cc51f;
+  border-right: 1px solid #eaeaea;
+}
+
+.btns button::after {
+  border: none;
+}
+
+/**没有更多数据*/
+
+.nomore {
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #ccc;
+  font-size: 24rpx;
+}
+
+/*暂无记录信息*/
+
+.norecord {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  padding: 60rpx 0 60rpx;
+}
+
+.norecord image {
+  margin: 0 auto 70rpx;
+}
+
+/*按钮  */
+
+.btn {
+  display: block;
+  width: 504rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0;
+  font-size: 28rpx;
+  background-color: #116fea;
+  color: #fff;
+  border-radius: 40rpx;
+}
+
+.btn::after {
+  border: none;
+  border-radius: 10px;
+}
+
+.img-hover {
+  opacity: 0.5;
+}
+
+.btn-hover {
+  background: #ddd;
+}
+
+/*取消 navigator 的点击背景颜色 */
+
+.navigator-hover {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0.7;
+}
+
+.mt300 {
+  margin-top: 300rpx;
+}
+
+.pt400 {
+  padding-top: 400rpx;
+}
+
+.mb30 {
+  margin-bottom: 30rpx;
+}
+
+.mt40 {
+  margin-top: 40rpx;
+}
+
+.mt80 {
+  margin-top: 80rpx;
+}
+
+.mt180 {
+  margin-top: 180rpx;
+}
+
+.mt110 {
+  margin-top: 110rpx;
+}
+
+.line {
+  height: 1px;
+  background: #eee;
+}
+
+.ml30 {
+  margin-left: 30rpx;
+}
+
+.ml32 {
+  margin-left: 32rpx;
+}
+
+.ml90 {
+  margin-left: 90rpx;
+}
+
+.mr30 {
+  margin-right: 30rpx;
+}
+
+.m60 {
+  margin: 60rpx 0;
+}
+
+.h20 {
+  height: 20rpx;
+  width: 100%;
+}
+
+.h20_2 {
+  height: 20rpx;
+  width: 100%;
+  background: #f0eff5;
+}
+
+.h60 {
+  height: 60rpx;
+  width: 100%;
+}
+
+.t-gray {
+  color: #666;
+}
+
+.gray-9 {
+  color: #999;
+}
+
+.gray-6 {
+  color: #666;
+}
+
+.gray-3 {
+  color: #333;
+}
+
+.black {
+  color: #000;
+}
+
+.red {
+  color: #ff2d2d;
+}
+
+.green {
+  color: #63c966;
+}
+
+.org {
+  color: #f40;
+}
+
+.hidden {
+  display: none;
+}
+
+.over-elips {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.word-inline {
+  word-break:break-all;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix::after {
+   content:".";
+   display:block;
+   height:0;
+   visibility:hidden;
+   clear:both;
+}
+
+.show-up {
+  //animation: show_up 0.5s ease-out;
+}
+
+.theme-tap {
+  background: #fff;
+  border: 1px solid d81e06;
+  color: #d81e06;
+}
+
+.theme-color {
+  color: #d81e06;
+}
+
+.theme-bg {
+  background: #d81e06;
+}
+
+.bg-wt {
+  background: #fff !important;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+@keyframes show_up {
+  0% {
+    opacity: 0;
+    transform: translateY(50rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.txt-wt {
+  color: #fff !important;
+}
+
+.txt-rd {
+  color: #d81e06;
+}
+
+.txt-light {
+  color: #afafaf;
+}
+
+.txt-gray {
+  color: #999;
+}
+
+.txt-dark {
+  color: #666 !important;
+}
+
+.tr {
+  text-align: right;
+}
+
+.ft22 {
+  font-size: 22rpx !important;
+}
+
+.ft24 {
+  font-size: 24rpx !important;
+}
+
+.ft28 {
+  font-size: 28rpx !important;
+}
+
+.ft32 {
+  font-size: 32rpx !important;
+}
+
+.ft34 {
+  font-size: 34rpx !important;
+}
+
+.ft42 {
+ font-size: 42rpx;
+}
+
+.tab-bottom {
+  font-size: 28rpx;
+  color: #e7e7e7;
+  background: #fbfbfb;
+  padding: 24rpx 0;
+  font-weight: 200;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.bg-gray {
+  background: #f0f3f7;
+}

@@ -1,0 +1,43 @@
+.wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.driver {
+  padding: 20rpx 32rpx;
+}
+
+map {
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.driver > view {
+  padding: 5px 0;
+}
+
+.user-info > view {
+  display: inline-block;
+}
+
+.user image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.user {
+  padding: 24rpx 32rpx;
+}
+
+.make-call {
+  width: 300rpx;
+}
+
+.make-call image{
+  width: 48rpx;
+  height: 48rpx;
+}

@@ -1,0 +1,38 @@
+<view class="cart-detail" hidden="{{!showCartDetail||!cartCount}}">
+    <!-- <view class="cart-detail"> -->
+    <view class="mask" bindtap="hideCartDetail"></view>
+    <view class="list">
+        <view bindtap="deleteCarts" wx:if = "{{cartList}}">
+           <button class="deleteCart">清空购物车</button> 
+        </view>
+        <view class="item" wx:for="{{cartList}}" wx:for-item="cartItem" wx:if="{{cartItem.quantity > 0 }}" wx:for-index='idx'>
+            <view class="name ellipsis" wx:if = "{{cartItem.sku_name}}">{{cartItem.name}}（{{cartItem.sku_name}}）</view>
+            <view class="name ellipsis" wx:else>{{cartItem.name}} </view>
+            <view>￥</view>
+            <view class="total">{{cartItem.price}}</view>
+            <view class="reduce" bindtap='shopCartMinus' data-idx='{{idx}}' data-id="{{cartItem.id}}" data-sku="{{cartItem.sku_id}}">
+                -
+            </view>
+            <view class="num">{{cartItem.quantity}}</view>
+            <view class="add" bindtap="shopCartAdd" data-idx='{{idx}}' data-id="{{cartItem.id}}" data-sku="{{cartItem.sku_id}}">
+                +
+            </view> 
+        </view>
+
+    </view>
+</view>
+<!-- 购物车  -->
+<view class="cart">
+    <view class="data" bindtap="showCartDetail">
+        <view class="icon">
+            <image src="/images/cart-blue.png"></image>
+            <view class="count">{{cartCount}}</view>
+        </view>
+        <view class="total">￥{{cartTotal}}</view>
+    </view>
+    <form bindsubmit="submit" report-submit="true">
+        <button bindtap='goPayTap' class="yellow {{cartCount?'':'disabled'}}" formType="submit" disabled="{{!cartCount}}">
+            去结算
+        </button>
+    </form>
+</view>

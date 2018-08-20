@@ -1,0 +1,17 @@
+page {
+  background: #f3f5f7;
+}
+
+textarea {
+  background: #fff;
+  border: 1rpx solid #666;
+  border-radius: 8rpx;
+  padding: 5%;
+  width: 90%;
+}
+
+button {
+  border: 0 !important;
+  color: #fff !important;
+  background: #d81e06 !important;
+}

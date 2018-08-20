@@ -1,0 +1,65 @@
+.dialog-wrapper {
+  position: fixed;
+  top: 300rpx;
+  left:0;
+  right:0;
+  z-index: 1002;
+}
+
+.dialog-box {
+  width: 480rpx;
+  margin: auto;
+  background: #fff;
+  border-radius: 6rpx;
+  box-shadow: 0 12rpx 32rpx #bbb;
+}
+
+.dialog-header {
+  padding: 15rpx 0;
+  text-align: center;
+}
+
+.dialog-header text {
+  font-size: 32rpx;
+}
+
+.dialog-content {
+  height: 150rpx;
+}
+
+.dialog-text {
+  padding: 30rpx;
+  word-break: break-all;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.dialog-footer {
+  padding: 12rpx;
+  text-align: center;
+}
+
+.half {
+  width: 47%;
+  display: inline-block;
+  margin: 1%;
+}
+
+.full {
+  width: 99%;
+}
+
+.btn {
+  border-radius: 5rpx;
+  padding: 12rpx 0;
+}
+
+.cancel {
+  border: 1px solid #aaa;
+  color: #aaa;
+}
+
+.cancel-tap {
+  background: #aaa;
+  color: #fff;
+}

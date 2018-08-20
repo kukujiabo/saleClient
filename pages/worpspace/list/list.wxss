@@ -1,0 +1,13 @@
+page {
+  background: #fff;
+}
+
+.w-list {
+  padding: 12rpx;
+}
+
+.w-itm {
+  padding: 18rpx 6rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 32rpx;
+}

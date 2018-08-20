@@ -1,0 +1,41 @@
+@import '/app.wxss';
+
+page {
+  background: #f0f0f0;
+}
+
+.logo {
+  padding: 36rpx;
+}
+
+.logo image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10%;
+  box-shadow: 0 0 16rpx #666;
+}
+
+.reg-box {
+  border-radius: 12rpx;
+  background: #fff;
+  padding: 48rpx 20rpx;
+  box-shadow: 0 0 16rpx #999;
+}
+
+.reg-box input {
+  border: 1rpx solid #cfcfcf;
+  border-radius: 8rpx;
+  line-height: 92rpx;
+  height: 92rpx;
+}
+
+.reg-box view {
+  padding: 20rpx 16rpx;
+}
+
+.reg-box button {
+  background: #62b900;
+  border: 0;
+  color: #fff;
+  font-weight: 200;
+}

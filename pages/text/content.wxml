@@ -1,0 +1,5 @@
+<!--pages/text/content.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view style="padding:15rpx">
+   <web-view src="{{url}}"></web-view>
+</view>

@@ -1,0 +1,79 @@
+<view>
+  <view class="status-bar">
+    <image src="{{status[0]}}"></image>
+    <view class="{{process[0]}}"></view>
+    <image src="{{status[1]}}"></image>
+    <view class="{{process[1]}}"></view>
+    <image src="{{status[2]}}"></image>
+    <view class="{{process[2]}}"></view>
+    <image src="{{status[3]}}"></image>
+  </view>
+  <view class="status-line clearfix">
+    <text class="fl">订单状态：{{order.status_str}}</text>
+    <text class="fr" style="color:#d81e06">金额：¥ {{order.order_money}}</text>
+  </view>
+  <view class="card-box">
+    <view class="order-title">
+      <view>
+        <text>{{order.address}}</text>
+      </view>
+      <view>
+        <text>收货人：{{order.consigner}}</text>
+      </view>
+      <view>
+        <text>手机号：{{order.mobile}}</text>
+      </view>
+      <view>
+        <text>发票：{{order.invoice == 1 ? '已开票' : '未开票'}}</text>
+      </view>
+      <view wx:if="{{order.order_status == 3}}">
+        <text>驾驶员：{{order.driver_name}}  联系方式：{{order.driver_phone}}</text>
+      </view>
+    </view>
+    <view class="order-message">
+      <view>
+        <text>订单备注：{{order.buyer_message}}</text>
+      </view>
+    </view>
+    <view class="goods-list">
+      <view class="goods-item" wx:for="{{order.goods_list}}" wx:key="{{item.goods_id}}">
+        <view class="clearfix">
+          <image src="{{item.goods_picture}}" class="fl"></image>
+          <view class="goods-info fl">
+            <view>
+              <text class="over-elips">{{item.goods_name}}</text>
+            </view>
+            <view>
+              <text class="over-elips">{{item.sku_name}}</text>
+            </view>
+          </view>
+          <view class="price-info fr" style="text-align:right">
+            <view>
+              <text class="over-elips">¥ {{item.price}}</text>
+            </view>
+            <view>
+              <text class="over-elips">* {{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="return clearfix" wx:if="{{order.audit == 1}}">
+          <button wx:if="{{item.num > 0}}" class="fr" size="mini" plain data-idx="{{index}}" bindtap="returnGoods">申请退货</button>
+          <button style="background:#e7e7e7;border:0" wx:else class="fr" size="mini" plain>已退货</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="return-box" wx:if="{{showReturnBox}}">
+    <view class="cover"></view>
+    <view class="box">
+      <view class="tc">
+        <text>可退货数量：{{returnGood.return_num}}</text>
+        <input bindinput="inputReturnNum" type='number' placeholder='退货数量'></input>
+      </view>
+      <view class="tc">
+        <button plain size="mini" style="background:#999;color:#fff" bindtap="hideReturnGood">取消</button>
+        <button plain size="mini" style="background:#d81e06;color:#fff" bindtap="returnOperation">确认</button>
+      </view>
+    </view>
+  </view>
+</view>

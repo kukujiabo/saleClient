@@ -1,0 +1,44 @@
+<view class="wrapper">
+  <view class="success-status clearfix" wx:if="{{!fail}}">
+    <image src="/images/success.png"></image>
+    <text>下单成功！</text>
+  </view>
+  <view class="success-status clearfix" wx:else>
+    <image src="/images/remove.png"></image>
+    <text>支付失败！</text>
+  </view>
+  <view class="order-info">
+    <view>
+      <text>订单编号：{{sn}}</text>
+    </view>
+    <view>
+      <text>订单金额：¥ {{order_price}}</text>
+    </view>
+  </view>
+  <view class="order-info">
+    <button bindtap='toIndex'>返回首页</button>
+  </view>
+  <view>
+    <view class="goods clearfix" hidden="{{goods.length == 0}}">
+      <view class="good" wx:for="{{goods}}" wx:key="{{idx}}">
+        <navigator url="/pages/goods/detail/detail?id={{item.goods_id}}">
+          <view>
+            <image style="border:1rpx solid #bbb;" src="{{item.thumbnail}}"></image>
+          </view>
+          <view class="lines">
+            <text class="over-elips goods-name">{{item.goods_name}}</text>
+          </view>
+          <view class="lines tl">
+            <text class="brand-name">{{item.brand_name}}</text>
+          </view>
+          <view class="lines tl">
+            <text class="over-elips" style="color:#ff0000" wx:if="{{item.min_money == item.max_money}}">¥ {{item.price}}</text>
+            <text class="over-elips" style="color:#ff0000" wx:else>¥{{item.min_money}} ~ ¥{{item.max_money}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+
+</view>

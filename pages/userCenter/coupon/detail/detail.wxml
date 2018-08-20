@@ -1,0 +1,22 @@
+<view class="wrap">
+  <view class="ft34">
+    <text class="bold">优惠券使用说明</text>
+  </view>
+  <view class="info-detail ft32 bold">
+    <view>
+      <text>优惠券名称：{{coupon.coupon_name}}</text>
+    </view>
+    <view>
+      <text>优惠券面额：{{coupon.money}}</text>
+    </view>
+    <view>
+      <text>有效期至：{{coupon.last_long == 1 ? '长期有效' : coupon.end_time }}</text>
+    </view>
+    <view>
+      <text>最低消费：¥ {{coupon.at_least}}</text>
+    </view>
+    <view>
+      <text>使用状态：{{coupon.state == 1 ? '有效' : '无效'}}</text>
+    </view>
+  </view>
+</view>

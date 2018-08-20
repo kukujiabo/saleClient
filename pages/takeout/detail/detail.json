@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goodsSku": "/components/goodsSku/index/index",
+    "cart": "/components/cart/index/index"
+  }
+}

@@ -1,0 +1,65 @@
+<view class="goods-standard-wrap" wx:if="{{show}}">
+  <view class="g-s-mask" bindtap='hide' catchtouchmove='noMove'>
+  </view>
+  <view scroll-y class="standard-box">
+    <image src="/images/remove.png" class="remove" bindtap="hide"></image>
+    <view class="info">
+      <view class="sku-info">
+        <view class="clearfix">
+          <view class="fl" style="width:25%">
+            <image src="{{sku_image}}" class='stand-image'></image>
+          </view>
+          <view class="fl" style="width:75%">
+            <view>
+              <text class="over-elips word-inline sku-select" class="s-i-gname">{{good.goods_name}}</text>
+            </view>
+            <view>
+              <text class="s-i-gprice">¥ {{unitPrice}}</text>
+              <text class="s-i-gstock"> 库存：{{selectedSku ? selectedSku.stock : good.stock}}</text>
+            </view>
+            <view>
+              <text class="over-elips word-inline s-i-gname" wx:if="{{selectedSku}}">已选择：{{selectedSku.sku_name}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="sign bold" wx:if="{{good.sign}}">
+           <image class="va-mid" src="/images/info.png"></image> <text class="va-mid">{{good.sign}}</text>
+        </view> 
+      </view>
+
+      <view class="attr-info clearfix" style="height:{{attrWrapHeight}}%">
+        <scroll-view scroll-y style='height:100%'>
+          <view id="attr_info" style="height:{{attrHeight}}">
+            <view wx:for="{{attrs}}" wx:for-index="aidx" wx:key="{{attr.attr_id}}" wx:for-item="attr">
+              <text class="attr-name">{{attr.attr_value}}：</text>
+              <view class="attr-values clearfix">
+                <text class="fl {{ attrValue.selected  }} " hidden="{{attrValue.available == 0}}" wx:for="{{attr.values}}" wx:for-index="avidx" wx:key="{{attrValue.attr_value_id}}" wx:for-item="attrValue" wx:if="{{attrValue.active == 1}}" data-attr_value_id="{{avidx}}" data-attr_id="{{aidx}}"
+                  catchtap='selectAttrValue'>{{attrValue.attr_value}}</text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="quantity clearfix">
+        <view class="fl label" style="width:30%">
+          <text class="attr-name">选择数量：</text>
+        </view>
+        <view class="fl" style="width:70%;text-align:right">
+          <image class="minus" style="vertical-align:middle" src="/images/minus.png" bindtap='minus'></image>
+          <input class="quantity" bindinput='tapQuantity' value="{{quantity}}"></input>
+          <image class="plus" style="vertical-align:middle" src="/images/plus.png" bindtap='plus'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="result clearfix">
+    <view class="fl price">
+      <text>总金额：</text>
+      <text>¥ {{total}}</text>
+    </view>
+    <view class="fl btns">
+      <button class="incart" wx:if="{{boardType == 2}}" catchtap='addToCart'>加入购物车</button>
+      <button class="purchase" wx:else catchtap='buy'>立即购买</button>
+    </view>
+  </view>
+</view>

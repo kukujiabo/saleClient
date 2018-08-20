@@ -1,0 +1,55 @@
+.search-bar {
+  background: #fff;
+  padding: 12rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.search-input {
+  background: #f0f3f7;
+  border-radius: 50rpx;
+  text-align:center;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.search-placeholder {
+  font-size: 22rpx;
+}
+.goods-list {
+  margin-top: 104rpx;
+  padding: 12rpx;
+}
+
+.goods-item {
+  padding: 12rpx;
+  border: 1px solid #eee;
+  width: 45%;
+  float:left;
+  margin: 5rpx;
+}
+
+.goods-item image {
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.goods-info {
+  padding: 12rpx 0;
+  font-weight: 200;
+}
+
+.goods-brand-name {
+  font-size: 22rpx;
+  padding: 16rpx 0;
+}
+
+.goods-price {
+  font-size: 28rpx;
+  color: #ff0000;
+}
+
+.goods-sale {
+  font-size: 24rpx;
+  color: #999;
+}

@@ -1,0 +1,97 @@
+<view class="container">
+  <wave id="wave"></wave>
+  <view class="header">
+    <view class='shop'>
+      <view class="logo">
+        <image src="{{shop.thumbnail}}" mode='widthFix' style='width:100%;' />
+      </view>
+      <view class="name ellipsis">{{shop.store_name}}</view>
+      <view class='addr'>地址：{{shop.address ? shop.address : ""}}</view>
+    </view>
+    <view class="line"></view>
+    <view class='welcome'>
+      <text>公告</text> {{shop.text ? shop.text : "路每家外卖新年期间，打包费、配送费全免！全免！"}}
+    </view>
+  </view>
+  <view class="content-container">
+    <!-- 左侧分类 -->
+    <scroll-view class="classify-container" scroll-y="true" scroll-into-view="{{toView}}">
+      <view class="classify {{classifySeleted==classify.id?'active':''}} count_cat_static" wx:for="{{classifyList}}" wx:for-item="classify" wx:key="id" data-id="{{classify.id}}" bindtap="tapClassify" id="menu_{{classify.id}}">
+        <view class="name">{{classify.name}}</view>
+        <view class="count_cat" wx:if="{{classify.quantity > 0}}">{{classify.quantity}}</view>
+      </view>
+    </scroll-view>
+    <!--右侧内容  -->
+    <scroll-view class="goods-container" scroll-y="true" scroll-into-view="f{{classifyViewed}}" bindscroll="onGoodsScroll" bindscrolltolower="toLower">
+      <view class="goods-block" wx:for="{{classifyList}}" wx:for-item="classify" wx:key="id" wx:for-index="key_1" id="f{{classify.id}}">
+        <view class="title">{{classify.name}}</view>
+        <view class="goods" wx:for="{{classify.goods}}" wx:for-item="goods" wx:key="*this" wx:for-index='idx'>
+          <view class='detailTap' bindtap='goodsdetailTap' data-idx='{{idx}}' data-key='{{key_1}}'>
+            <image class="pic" src="{{goods.thumbnail}}"></image>
+            <view class="name ellipsis">{{goods.name}}</view>
+            <view class="sold">月售{{goods.sales_quantity}}</view>
+            <view class="price">￥{{goods.price}}</view>
+          </view>
+
+          <view class='flex shopscart' wx:if="{{goods.type== 1}}">
+
+            <view class='selectTap' catchtap="openSku" data-key="{{id}}" data-type='{{goods.type}}' data-idx='{{idx}}' data-key='{{key_1}}'>选规格</view>
+            <view class="count_sku" wx:if="{{goods.quantity > 0}}">{{goods.quantity}}</view>
+          </view>
+
+          <view class='flex shopscart' wx:if="{{goods.type== 2}}">
+            <view class='shopscart-l' wx:if="{{goods.quantity > 0}}" data-key='{{id}}' data-idx='{{idx}}'>
+              <image src="/images/minus-blue.png" catchtap='shopscartMinus' data-key="{{id}}" data-idx='{{idx}}' data-key='{{key_1}}' />
+              <text>{{goods.quantity}}</text>
+            </view>
+            <view class="shopscart-r addCart" catchtap="shopscartAdd" data-key="{{id}}" data-type='{{goods.type}}' data-idx='{{idx}}' data-key='{{key_1}}'>
+              <image src="/images/add-blue.png" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 购物车列表 -->
+  <cart id="cart" bind:myevent="onMyEvent" bind:deleteCartGoods="deleteCartGoods"></cart>
+</view>
+
+<!--商品 规格 弹框 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class='shop-select'>
+    <view class='shopItem'>
+      <view class="goods goodsItem" style="clear:both">
+        <view class='flex'>
+          <image class="pic" src="{{goodsSelected.images}}"></image>
+          <view>
+            <view class="name ellipsis">{{goodsSelected.name}}</view>
+            <view class="price">￥{{goodsSelected.price}}</view>
+          </view>
+        </view>
+        <view class="close-modal" bindtap="closeTap">×</view>
+      </view>
+
+      <!--options-->
+      <goodsSku id="operation_goods_sku" bind:updateGoodsSelected="updateGoodsSelected"></goodsSku>
+
+      <view class='shopNum'>
+        <text>购买数量</text>
+        <view class="add-btn">
+          <button bindtap='shopSpecMinusNum'>
+            <image src='/images/minus-blue.png' />
+          </button>
+          <!-- <text>{{goodsItemNum}}</text> -->
+          <text>{{cart_quantity}}</text>
+          <button bindtap='shopSpecAddNum'>
+            <image src='/images/add-blue.png' />
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="goodsSpecAddCart" data-status="cancel">加入购物车</view>
+    <view class="btn-confirm" bindtap="purchaseTap" data-status="confirm">立即购买</view>
+  </view>
+</view>

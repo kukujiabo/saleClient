@@ -1,0 +1,103 @@
+page {
+  background: #f0f3f7 !important;
+}
+
+.addreaa-cont {
+  padding-bottom: 176rpx;
+}
+
+.addr-list {
+  margin-bottom: 12rpx;
+  background: #fff;
+}
+
+.addr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 37rpx;
+  height: 190rpx;
+}
+
+.addr .icon, .addr .icon image {
+  width: 34rpx;
+  height: 42rpx;
+}
+
+.addr-txt {
+  margin-left: 40rpx;
+  width: 616rpx;
+  color: #000;
+  font-size: 28rpx;
+}
+
+.addr-txt-top {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 28rpx; */
+}
+
+.addr-txt text {
+  color: #666;
+}
+
+.addr-txt-top .tele {
+  font-size: 24rpx;
+}
+
+.recipients-addr text, .recipients text {
+  width: 140rpx;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.addr-manage {
+  display: flex;
+  justify-content: space-between;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-top: 1px solid #ddd;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.addr-manage radio {
+  transform: scale(0.6);
+}
+
+.addr-btn {
+  display: flex;
+}
+
+.addr-btn view {
+  display: flex;
+  align-items: center;
+}
+
+.addr-btn view image {
+  margin-left: 35rpx;
+  margin-right: 6rpx;
+}
+
+.addAddr-btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 156rpx;
+  /* background:rgba(240, 239, 245, 0.9);  */
+}
+
+.addrNo {
+  text-align: center;
+  padding-top: 60rpx;
+  color: #999;
+}
+
+.addrNo image {
+  display: block;
+  margin: 300rpx auto 60rpx;
+}

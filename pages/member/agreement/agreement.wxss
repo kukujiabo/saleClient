@@ -1,0 +1,5 @@
+page{background: #fff;}
+.agreement-cont{padding:0 40rpx 40rpx;}
+.agreement-cont .tit{text-align: center;font-size: 32rpx;
+margin-bottom: 40rpx;border-bottom: 1px solid #efefef;padding:30rpx 0;}
+.agreement-cont .txt{font-size: 24rpx;line-height:36rpx;}

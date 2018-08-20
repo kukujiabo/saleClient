@@ -1,0 +1,116 @@
+page {
+  background: #f0f3f7;
+}
+
+.search-bar {
+  padding: 36rpx;
+  background: #fff;
+}
+
+.search-bar input {
+  height: 66rpx;
+  line-height: 66rpx;
+  border-radius: 33rpx;
+  background: #f0f3f7;
+  border: 0;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.tabs view {
+  float: left;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  width: 16.6%;
+  text-align: center;
+  background: #fff;
+  color: #afafaf;
+}
+
+.tabs view.active {
+  border-bottom: 2rpx solid #000;
+  color: #000;
+}
+
+.order-list {
+  padding: 16rpx;
+}
+
+.order-title {
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.order-title text {
+  color: #666;
+  font-size: 26rpx;
+}
+
+.order-item {
+  padding: 16rpx;
+  border-radius: 8rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  border: 1rpx solid #efefef;
+  box-shadow: 0 0 12rpx #eee;
+}
+
+.goods-item {
+  padding: 15rpx 0;
+}
+
+.goods-item image {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 8rpx;
+}
+
+.goods-info {
+  padding: 0 20rpx;
+}
+
+.goods-info text {
+  height: 50rpx;
+  line-height: 50rpx;
+  display: block;
+  font-size: 24rpx;
+  width: 100%;
+}
+
+.operation-line {
+  padding-top: 12rpx;
+  text-align: right;
+}
+
+.operation-line button {
+  font-size: 24rpx;
+  border: 0;
+  margin: 0 5rpx;
+}
+
+.again {
+  background: #116fea !important;
+  color: #fff !important;
+}
+
+.receive {
+  background: #116fea !important;
+  color: #fff !important;
+}
+
+.empty-order {
+  padding: 20rpx;
+  color: #999;
+  text-align: center;
+}
+
+.remove-order {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.trans-order {
+  background: #f9c855 !important;
+  color: #000 !important;
+}

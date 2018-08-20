@@ -1,0 +1,5 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<view style="padding:20rpx;">
+  <text class="ft32 bold">用户协议</text>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

@@ -1,0 +1,11 @@
+.wrap {
+  padding: 30rpx;
+}
+
+.info-detail {
+  padding: 30rpx 0;
+}
+
+.info-detail view {
+  margin: 15rpx 0;
+}

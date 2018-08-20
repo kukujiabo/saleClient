@@ -1,0 +1,143 @@
+/* pages/mall/mall.wxss */
+page {
+  background: #f0f3f3;
+}
+swiper {
+  height: 350rpx;
+}
+.location {
+  height: 70rpx;
+  line-height: 70rpx;
+  width:160rpx;
+  border: 1px solid #dfdfdf;
+  text-align: center;
+  background :#fff;
+  border-radius: 8rpx;
+  color:#d81e06;
+  font-size: 24rpx;
+}
+.location image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+.search {
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+}
+.clearfix::after {
+   content:".";
+   display:block;
+   height:0;
+   visibility:hidden;
+   clear:both;
+}
+.category-wrapper {
+  margin: 0 16rpx 16rpx 16rpx;
+  padding: 32rpx 0;
+  background: #fff;
+}
+
+.category {
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+.category image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.slide-image {
+  width: 750rpx;
+  height: 350rpx;
+}
+
+.goods, .brands {
+  background:#fff;
+  margin: 16rpx;
+  padding: 22px 0;
+}
+
+.good {
+  float: left;
+  text-align: center;
+  width: 50%;
+  padding-bottom: 10rpx;
+}
+.good image {
+  width: 320rpx;
+  height: 320rpx;
+  border-radius: 8rpx;
+  color: #666;
+}
+.good text {
+  text-align: left;
+  display: inline-block;
+  padding: 5rpx 15rpx;
+}
+.brand image {
+  width: 120rpx;
+  height: 120rpx;
+}
+.brand {
+  float: left;
+  text-align: center;
+  width: 25%;
+}
+
+.all image {
+  width:12rpx;
+  height:21rpx;
+  vertical-align: middle;
+  padding: 10rpx 0;
+}
+
+.goods-name {
+  font-weight: 300;
+  width: 90%;
+}
+.brand-name {
+  font-weight: 200;
+  font-size: 24rpx;
+}
+.lines {
+  text-align: left;
+}
+
+.round-circle {
+  animation: rotate 1.5s infinite ease-in-out;
+}
+.title {
+  font-weight: 200;
+  color: #777;
+  font-size: 24rpx;
+}
+
+.to-top {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 60rpx;
+  right: 50rpx;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}

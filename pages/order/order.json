@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "确认下单",
+  "enableScroll": false,
+  "usingComponents": {
+    "wave": "/components/loading/loading1/wave"
+  }
+}

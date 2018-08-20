@@ -1,0 +1,24 @@
+page{background: #fff;}
+.map-cont{padding-bottom: 120rpx;}
+.shop-img image{}
+.info{margin: 40rpx;font-size: 28rpx;color: #333;padding-bottom:32px;border-bottom: 1px solid #f0f0f0; }
+.info view{display: flex;align-items: center;margin-bottom:35rpx;
+justify-content: space-between;}
+.info view image{width: 40rpx;height: 40rpx;}
+.info view text{width:610rpx;font-size: 32rpx;color: #888;
+overflow: hidden;white-space:nowrap;text-overflow:ellipsis;}
+.info view text.storeName{font-weight: bold;font-size: 42rpx;color: #666;}
+.map{width: 100%;height:320px;background: #f00;overflow: hidden;}
+.shopCont{padding: 38rpx 30rpx;}
+.shopCont text{font-size: 36rpx;color: #333;line-height: 52rpx;}
+.shopCont image{padding: 20rpx 0;}
+
+.store-photos{padding: 40rpx 20rpx;}
+.store-photos .tit{height:60rpx;line-height: 60rpx;position: relative;display: flex;justify-content: center;margin-bottom: 40rpx;}
+.store-photos .tit view{height: 1px;width: 400rpx;background: #ccc;position: absolute;top:30rpx;left:150rpx; z-index: 1;}
+.store-photos .tit text{position: relative;text-align: center;padding-bottom: 40rpx;background: #fff;padding: 0 40rpx;z-index: 2; }
+.store-photos .img{display: flex;width: 100%;justify-content:space-around; }
+.store-photos .img view{width:190rpx;height:190rpx; overflow: hidden;border-radius:0px;}
+
+.takeoutNav{background: rgba(99, 201, 102, 1);width: 100%;height: 100rpx;line-height: 100rpx;
+position: fixed;left: 0;bottom: 0;text-align: center;color: #fff;}

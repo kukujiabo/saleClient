@@ -1,0 +1,63 @@
+<view>
+  <wave id="wave"></wave>
+  <swiper 
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" 
+    duration="{{duration}}">
+    <block wx:for="{{brandList}}" wx:key="{{idx}}">
+      <swiper-item data-link="{{item.link}}" data-type="{{item.link_type}}" catchtap='toDetail'>
+        <image src="{{item.url}}" class="slide-image" width="100%" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="clearfix" style="padding:20rpx 15rpx;background:#f3f3f3">
+    <view class="fl">
+      <view wx:if="{{!loadingLocation}}" class="location" hover-class='theme-tap' bindtap='toCityList'>
+        <image src="/images/choose-location.png"></image><text class="over-elips" style="width:100rpx;display:inline-block;vertical-align:middle">{{location.city ? location.city : '定位'}}</text>
+      </view>
+      <view wx:else class="location" hover-class='theme-tap' bindtap='toCityList'>
+        <image class="round-circle" src='/images/loading.png' style="width:42rpx;height:42rpx;vertical-align:middle"></image>
+      </view>
+    </view>
+    <view class="fl" style="padding-left:5rpx;">
+      <input class="search" placeholder="输入查询关键字..." type="text" confirm-type="search" style="width:550rpx" bindconfirm='goSearch'></input>
+    </view>
+  </view>
+  <view class="category-wrapper clearfix">
+    <view class="category" wx:for="{{categories}}" wx:key="{{idx}}" bindtap="toCategory" data-id="{{item.category_id}}">
+      <view>
+        <image src="{{item.category_pic}}"></image>
+      </view>
+      <text>{{item.category_name}}</text>
+    </view>
+  </view>
+  <view class="brands clearfix" hidden="{{brands.length == 0}}">
+    <view class="brand" wx:for="{{brands}}" wx:key="{{idx}}">
+      <navigator url="/pages/brand/detail/detail?id={{item.id}}">
+        <view>
+          <image src="{{item.brand_avatar}}"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="goods clearfix" hidden="{{goods.length == 0}}">
+    <view class="good" wx:for="{{goods}}" wx:key="{{idx}}">
+      <navigator url="/pages/goods/detail/detail?id={{item.goods_id}}">
+        <view>
+          <image style="border:1rpx solid #bbb;" src="{{item.thumbnail}}"></image>
+        </view>
+        <view class="lines">
+          <text class="over-elips goods-name">{{item.goods_name}}</text>
+        </view>
+        <view class="lines">
+          <text class="brand-name">{{item.brand_name}}</text>
+        </view>
+        <view class="lines">
+          <text class="over-elips" style="color:#ff0000" wx:if="{{item.min_money == item.max_money}}">¥ {{item.price}}</text>
+          <text class="over-elips" style="color:#ff0000" wx:else>¥{{item.min_money}} ~ ¥{{item.max_money}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <image class="to-top" catchtap='toTop' wx:if="{{floorstatus}}" src="/images/up.png"></image>
+</view>

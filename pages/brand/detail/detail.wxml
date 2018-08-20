@@ -1,0 +1,26 @@
+<view>
+  <view class="brand-background">
+    <view class="lines" style="width:24%">
+      <image src="{{brand.brand_avatar}}" class="logo"></image>
+    </view>
+    <view class="lines" style="width:76%">
+      <text>{{brand.brand_name}}</text>
+      <view class="brand-intro">
+        {{brand.introduction}}
+      </view>
+    </view>
+    <view style="clear:both"></view>
+  </view>
+  <view class="goods-list">
+    <view class="goods-item" wx:for="{{goods}}" wx:key="{{item.id}}" bindtap="toDetail" data-id="{{item.goods_id}}">
+      <image src="{{item.thumbnail}}"></image>
+      <view class="goods-info">
+        <text style="width:100%" class="over-elips">{{item.goods_name}}</text>
+        <view class="goods-brand-name">
+          <text>{{item.brand_name}}</text>
+        </view>
+      </view>
+    </view>
+    <view style="clear:both"></view>
+  </view>
+</view>
